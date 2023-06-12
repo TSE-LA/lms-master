@@ -1,0 +1,13 @@
+dependencies {
+  compile project(':erin-lms-base-aim')
+  compile project(':erin-lms-base-domain')
+  compile project(':erin-lms-base-scorm')
+  compile 'mn.erin.common:erin-common-rest:1.0.0'
+
+  compile lib.commons.collections
+  compile lib.springData.mongo
+  compile lib.google.gson
+
+  compileOnly lib.javax.inject
+  testCompile lib.spring.test
+}

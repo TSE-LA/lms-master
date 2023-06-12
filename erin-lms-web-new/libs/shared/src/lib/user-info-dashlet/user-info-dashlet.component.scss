@@ -1,0 +1,45 @@
+@use "libs/shared/src/lib/theme/styles/theme" as *;
+@use "libs/shared/src/lib/theme/styles/layout/breakpoints" as *;
+
+.wrapper {
+  display: grid;
+  height: 120px;
+  grid-template-columns: 70% 30%;
+  padding: 15px;
+  background-color: get-theme-variable(background-color-primary);
+  box-shadow: 2px 1px 2px 0 get-theme-variable(calendar-box-shadow);
+  color: get-theme-variable(text-color-primary);
+  @include media-breakpoint-down(media_md) {
+    padding: 30px;
+    height: 150px;
+  }
+}
+
+.user-info {
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+}
+
+.total-score {
+  display: grid;
+  grid-template-rows: 70% 30%;
+  border: 1px solid get-theme-variable(calendar-border-color);
+  border-radius: 15px;
+  height: 100px;
+
+  span {
+    display: grid;
+    place-items: center;
+  }
+}
+
+.image {
+  display: grid;
+  place-items: center;
+}
+
+.info-text{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

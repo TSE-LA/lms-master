@@ -1,0 +1,7 @@
+dependencies {
+  compile project(':erin-lms-unitel-server')
+  lib.erin.aim_domain
+  lib.erin.aim_ohs_shiro
+
+  testCompile lib.spring.test
+}

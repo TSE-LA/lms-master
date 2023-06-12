@@ -1,0 +1,60 @@
+@use "../theme/styles/theme" as *;
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.progress-bar {
+  width: 350px;
+  height: 3em;
+  background-color: get-theme-variable(background-color-primary);
+  border-radius: 1.5em;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  color: black;
+}
+
+.progress {
+  content: "";
+  background-repeat: no-repeat;
+  animation: shimmer 5s linear infinite;
+  background-image: get-theme-variable(progress-bar-background-color);
+  background-color: get-theme-variable(primary);
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  max-width: 300px;
+  margin-top: -19px;
+  margin-left: 7px;
+  height: 6px;
+  width: 0;
+  border-radius: 1em;
+  padding: 1em;
+  transition: width 2s;
+}
+
+.progress-text {
+  align-items: center;
+  position: relative;
+  left: 29%;
+  top: 0.8rem;
+  font-size: 20px;
+  text-shadow: -0.5px -0.5px get-theme-variable(progress-text-shadow-color);
+  color: get-theme-variable(text-color-light);
+}
+
+.hide-progress {
+  display: none;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -325px 0;
+  }
+  100% {
+    background-position: 325px 0;
+  }
+}

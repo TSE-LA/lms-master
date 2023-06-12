@@ -1,0 +1,30 @@
+@font-face {
+  font-family: 'Jarvis-Icons';
+  src: url("../../../assets/jrs-fonts.ttf") format('truetype');
+}
+
+@font-face {
+  font-family: 'Material';
+  src: url("../../../assets/MaterialIcons-Regular.ttf") format('truetype');
+}
+
+@font-face {
+  font-family: 'FontAwesome';
+  src: url("../../../assets/fa-regular-400.ttf") format('truetype');
+}
+
+.jrs-icon{
+  font-family: Jarvis-Icons;
+}
+
+.mat-icon{
+  font-family: Material;
+}
+
+.fa-icon{
+  font-family: FontAwesome;
+}
+
+.jrs-font{
+  font-family:  Roboto;
+}

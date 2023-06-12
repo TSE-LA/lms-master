@@ -1,0 +1,33 @@
+@use "../../../../../../shared/src/lib/theme/styles/theme" as *;
+@use "../../../../../../shared/src/lib/theme/styles/layout/breakpoints" as *;
+
+.container {
+  display: grid;
+  grid-template-rows: 0.5fr 1.5fr 8fr;
+}
+
+.dashlets {
+  margin: 0 5px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 30px;
+  @include media-breakpoint-down(media_lg) {
+    grid-column-gap: 20px;
+  }
+  @include media-breakpoint-down(media_md) {
+    grid-column-gap: 10px;
+  }
+  @include media-breakpoint-down(media_sm) {
+    grid-column-gap: 5px;
+  }
+}
+
+.header {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.context-button {
+  margin-top: 25px;
+  margin-left: 15px;
+}

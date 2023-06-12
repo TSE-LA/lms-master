@@ -1,0 +1,63 @@
+/*
+ * Copyright (C) ERIN SYSTEMS LLC, 2021. All rights reserved.
+ *
+ * The source code is protected by copyright laws and international copyright treaties, as well as
+ * other intellectual property laws and treaties.
+ */
+
+plugins {
+  id 'com.github.node-gradle.node' version '3.1.1'
+}
+
+node {
+  download = true
+  npmVersion = '6.14.15'
+}
+
+def unitelDistDir = project.provider { file('dist/apps/unitel') }
+def jarvisDistDir = project.provider { file('dist/apps/jarvis') }
+
+tasks.register('unitelBuildProd', NpmTask) {
+  dependsOn npmInstall
+  args = ['run', 'build-unitel-prod']
+  inputs.files('package.json', 'package-lock.json', 'angular.json', 'tsconfig.base.json', 'nx.json')
+  inputs.dir('apps/unitel')
+  inputs.dir('libs')
+  inputs.dir(fileTree('node_modules').exclude('.cache'))
+  outputs.dir(unitelDistDir)
+}
+
+tasks.register('unitelProdWar', War) {
+  dependsOn unitelBuildProd
+  archiveName 'unitel/client-new.war'
+  from unitelDistDir
+}
+
+tasks.register('jarvisBuildProd', NpmTask) {
+  dependsOn npmInstall
+  args = ['run', 'build-jarvis-prod']
+  inputs.files('package.json', 'package-lock.json', 'angular.json', 'tsconfig.base.json', 'nx.json')
+  inputs.dir('apps/jarvis')
+  inputs.dir('libs')
+  inputs.dir(fileTree('node_modules').exclude('.cache'))
+  outputs.dir(jarvisDistDir)
+}
+
+tasks.register('jarvisProdWar', War) {
+  dependsOn jarvisBuildProd
+  archiveName 'jarvis/client-new.war'
+  from jarvisDistDir
+}
+
+sonarqube {
+  properties {
+    def sources = [
+        file('apps/jarvis/src').absolutePath,
+        file('apps/unitel/src').absolutePath,
+        file('libs').absolutePath,
+    ]
+    property('sonar.sourceEncoding', 'UTF-8')
+    property('sonar.sources', sources.join(','))
+    property('projectBaseDir', projectDir.absolutePath)
+  }
+}

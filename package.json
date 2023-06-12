@@ -1,0 +1,23 @@
+{
+  "name": "lms",
+  "version": "2.10.2",
+  "description": "Learning Management System",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/erinsystemsllc/lms.git"
+  },
+  "bugs": {
+    "url": "https://github.com/erinsystemsllc/lms/issues"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.6.3",
+    "@commitlint/config-conventional": "^17.6.3",
+    "commitlint": "^17.6.3",
+    "husky": "^8.0.0"
+  }
+}

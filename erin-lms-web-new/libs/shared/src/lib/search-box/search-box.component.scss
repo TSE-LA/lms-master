@@ -1,0 +1,76 @@
+@use "../theme/styles/theme" as *;
+
+.container {
+  position: absolute;
+  height: 50px;
+  width: 310px;
+  background-color: transparent;
+  z-index: 15;
+  transform: translateY(-25px);
+}
+
+.input {
+  display: flex;
+  height: 50px;
+  width: 50px;
+  transition: width 1s;
+  cursor: pointer;
+}
+
+input {
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: solid;
+  border-bottom-color: #c2c2c2;
+  padding-left: 10px;
+  font-size: 15px;
+  visibility: hidden;
+  width: 0;
+  height: 45px;
+  transition: width 1.5s, visibility 1.5s;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+
+.dropdown {
+  display: flex;
+  align-items: center;
+  visibility: hidden;
+  margin-top: 10px;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px 1px get-theme-variable(navigation-shadow-color);
+  width: 310px;
+  height: 0;
+  background-color: get-theme-variable(background-color-primary);
+  transition: height 1s, visibility 0.5s;
+}
+
+.icon {
+  user-select: none;
+  transition: transform 1s;
+  padding-top: 10px;
+}
+
+.checkbox {
+  margin-left: 10px;
+}
+
+.opened {
+  .input {
+    width: 310px;
+  }
+
+  .dropdown {
+    height: 50px;
+    visibility: visible;
+  }
+
+  input {
+    width: 260px;
+    visibility: visible;
+  }
+}

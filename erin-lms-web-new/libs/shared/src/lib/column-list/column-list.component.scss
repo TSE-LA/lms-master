@@ -1,0 +1,43 @@
+@use "../theme/styles/theme" as *;
+
+.column-list-container {
+  box-sizing: border-box;
+  background-color: get-theme-variable(background-color-secondary);
+  border-radius: get-theme-variable(border-radius-5);
+  padding: 10px 25px;
+  overflow-y: scroll;
+}
+
+.column-list {
+  display: grid;
+  color: get-theme-variable(text-color-primary)
+}
+
+.column-list-title-container {
+  font-size: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: bold;
+}
+
+.column-list-title {
+  margin-bottom: 5px;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: get-theme-variable(scrollbar-track-background-color);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: get-theme-variable(border-radius-5);
+  background: get-theme-variable(scrollbar-thumb-primary-background-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: get-theme-variable(scrollbar-thumb-background-color-hover);
+}

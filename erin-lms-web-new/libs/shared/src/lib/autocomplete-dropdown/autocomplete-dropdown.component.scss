@@ -1,0 +1,110 @@
+@use "../theme/styles/theme" as *;
+
+.autocomplete-input-container * {
+  box-sizing: border-box;
+}
+
+.mat-option {
+  height: 35px !important;
+  color: get-theme-variable(text-color-primary);
+  background-color: get-theme-variable(background-color-primary);
+
+  span {
+    font-size: 13px;
+  }
+}
+
+.option {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+.autocomplete-label-style {
+  padding: 0 5px;
+  font-size: 13px;
+  color: get-theme-variable(input-text-color);
+}
+
+.autocomplete-input {
+  font-weight: normal;
+  color: get-theme-variable(text-color-dark);
+  display: block;
+  transition: all 0.5s ease;
+  white-space: nowrap;
+  min-height: 37px;
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid get-theme-variable(outline-color);
+  background-color: get-theme-variable(background-color-primary);
+  border-radius: 5px;
+
+  &:focus {
+    outline: 0;
+    border-color: get-theme-variable(input-text-color);
+
+    ~ label {
+      color: transparent;
+    }
+  }
+
+  &:hover {
+    border-color: get-theme-variable(input-text-color);
+  }
+}
+
+.autocomplete-input-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  background-color: get-theme-variable(background-color-primary);
+  border: 1px solid get-theme-variable(outline-color);
+  border-radius: 5px;
+
+  label {
+    color: get-theme-variable(input-text-color);
+    padding: 0.7rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 0.25s cubic-bezier(0.2, 0, 0.03, 1);
+    pointer-events: none;
+  }
+
+  &.wide {
+    width: 100%;
+  }
+
+  &:focus {
+    outline: 0;
+    border-color: get-theme-variable(input-text-color);
+  }
+
+  &:hover {
+    border-color: get-theme-variable(input-text-color);
+  }
+
+  .autocomplete-jrs-icon {
+    padding-left: 5px;
+  }
+
+  .autocomplete-input {
+    border: none;
+    border-top-left-radius: unset;
+    border-bottom-left-radius: unset;
+  }
+}
+
+.autocomplete-icon {
+  display: grid;
+  place-items: center;
+  background-color: white;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}

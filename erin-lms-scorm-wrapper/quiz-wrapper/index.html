@@ -1,0 +1,80 @@
+<!--
+  ~ (C)opyright, 2019, ERIN SYSTEMS LLC
+  ~ The source code is protected by copyright laws and international copyright
+  ~ treaties, as well as other intellectual property laws and treaties.
+  ~ All rights reserved.
+  -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Test</title>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="material.grey-amber.min.css">
+  <link rel="stylesheet" href="materialize.min.css">
+  <link rel="stylesheet" href="loading-bar.min.css">
+  <link rel="stylesheet" href="style.css">
+
+  <script src="materialize.min.js"></script>
+  <script type="text/javascript" src="wrapper.js"></script>
+  <script type="text/javascript" src="loading-bar.min.js"></script>
+</head>
+<body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
+
+<div id="loader">
+  <div
+    id="ld"
+    class="ldBar label-center bar"
+    data-type="fill"
+    data-img="unitel-logo.svg"
+    data-value="0"
+  ></div>
+</div>
+
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+
+  <div class="quiz-info">
+    <div class="demo-card-square mdl-card mdl-shadow--2dp quiz-card">
+      <div class="mdl-card__title">
+        <img class="quiz-info-img" src="my_score.png">
+        <h5 class="quiz-info-title title-size">Авсан оноо</h5>
+        <h5 class="small-text">Авсан</h5>
+        <div class="divider"></div>
+        <h5 class="quiz-title-style" id="current-score-value">0</h5>
+      </div>
+
+      <div class="mdl-card__title">
+        <img class="quiz-info-img" src="attempts.png">
+        <h5 class="quiz-info-title title-size" >Үлдсэн оролдлого</h5>
+        <h5 class="small-text">Oролдлого</h5>
+        <div class="divider"></div>
+        <h5 class="quiz-title-style" id="attempts-value">0</h5>
+      </div>
+
+      <div class="mdl-card__title">
+        <img class="quiz-info-img" src="threshold.png">
+        <h5 class="quiz-info-title title-size">Босго оноо</h5>
+        <h5 class="small-text">Босго</h5>
+        <div class="divider"></div>
+        <h5 class="quiz-title-style" id="threshold-score-value">0</h5>
+      </div>
+    </div>
+  </div>
+
+  <main class="mdl-layout__content">
+    <div class="mdl-layout__tab-panel is-active" id="quizFrame">
+    </div>
+    <div class="submit-button">
+      <button id="submit-button" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+        Дуусгах
+      </button>
+    </div>
+  </main>
+</div>
+<script src="material.min.js"></script>
+</body>
+</html>

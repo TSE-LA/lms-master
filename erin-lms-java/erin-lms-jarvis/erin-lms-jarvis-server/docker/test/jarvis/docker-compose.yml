@@ -1,0 +1,83 @@
+version: '2'
+
+services:
+  app:
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+    image: erin/lms-jarvis:latest
+    mem_limit: 3g
+    environment:
+      JAVA_OPTS: "
+        -DdomainName=${DOMAIN_NAME}
+        -Dldap.exclude=(objectClass=computer)
+        -Dldap.url=ldap://${LDAP_HOST}:${LDAP_PORT}
+        -Dldap.baseDn=${LDAP_BASE}
+        -Dldap.tenantId=${LDAP_TENANT_ID}
+        -Dldap.type=${LDAP_TYPE}
+        -DREALM_TYPE=${REALM_TYPE}
+        -Dldap.username=${LDAP_USERNAME}
+        -Dldap.password=${LDAP_PASSWORD}
+        -Dldap.principalSuffix=${LDAP_SUFFIX}
+        -Dlms.mongodb.host=mongo
+        -Dlms.mongodb.username=${MONGO_USERNAME}
+        -Dlms.mongodb.password=${MONGO_PASSWORD}
+        -Dadmin.resources=aim/admins
+        -Dauthority.resources=aim/group/**,aim/memberships,aim/roles,aim/users,aim/group-members
+        -Dsecure.resources=
+        -Danon.resources=aim/login,aim/logout,lms/**
+        -Dspring.mail.host=${MAIL_HOST}
+        -Dspring.mail.port=${MAIL_PORT}
+        -Dspring.mail.username=${MAIL_USERNAME}
+        -Dspring.mail.password=${MAIL_PASSWORD}
+        -Dspring.mail.protocol=smtp
+        -Dspring.mail.smtp.starttls.enable=false
+        -Dspring.mail.smtp.auth=true
+        -Dspring.mail.smtp.ssl.enable=true
+        -Dspring.mail.debug=true
+        -Duser.timezone=Asia/Ulaanbaatar
+        -Dalfresco.username=${ALFRESCO_USERNAME}
+        -Dalfresco.password=${ALFRESCO_PASSWORD}
+        -Xms3g -Xmx3g
+        -Djava.rmi.server.hostname=127.0.0.1
+        "
+      CATALINA_OPTS: "-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:8888"
+      ALFRESCO_HOST: "http://alfresco.erin.systems:8080"
+    ports:
+      - 8040:8040
+      - 8888:8888
+    networks:
+      - lms-network
+    links:
+      - mongo
+    restart: unless-stopped
+  mongo:
+    image: mongo:latest
+    container_name: mongo
+    mem_limit: 1g
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: "${MONGO_USERNAME}"
+      MONGO_INITDB_ROOT_PASSWORD: "${MONGO_PASSWORD}"
+    ports:
+      - 27017:27017
+    volumes:
+      - ./mongo-data:/data/db
+    networks:
+      - lms-network
+    restart: unless-stopped
+  video-streamer:
+    image: docker.pkg.github.com/erinsystemsllc/erin-video-streaming-service/erin-video-streamer:latest
+    container_name: video-streamer
+    mem_limit: 1g
+    ports:
+      - 3000:3000
+    networks:
+      - lms-network
+    restart: unless-stopped
+
+volumes:
+  mongo-data:
+
+networks:
+  lms-network:
+    driver: bridge

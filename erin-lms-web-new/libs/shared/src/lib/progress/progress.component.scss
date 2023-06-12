@@ -1,0 +1,37 @@
+@use "../theme/styles/theme" as *;
+
+.progress-circle{
+  circle{
+
+  }
+}
+
+.progress-circle-circle {
+  stroke: get-theme-variable(primary);
+  stroke-linecap: round;
+  transition: all 0.3s ease-in-out;
+  z-index: 2;
+}
+
+.progress-circle-text {
+  fill: get-theme-variable(primary);
+  text-anchor: middle;
+  alignment-baseline: middle;
+}
+.small{
+  transform: scale(0.7);
+  font-size: 13px;
+}
+
+.progress-circle-background{
+  position: absolute;
+  top: 0;
+  left: 0;
+  stroke-dashoffset: 0;
+  stroke: get-theme-variable(background-color-secondary);
+  z-index: 1;
+}
+.medium{
+  transform: scale(1);
+  font-size: 13px;
+}

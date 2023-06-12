@@ -1,0 +1,154 @@
+@use "../theme/styles/theme" as *;
+
+.container{
+  padding-bottom: 18px;
+}
+* {
+  box-sizing: border-box;
+}
+
+.bottom-padding {
+  padding-bottom: 18px;
+}
+
+.move {
+  label {
+    top: 12px;
+    font-size: 11px;
+    color: get-theme-variable(input-text-color);
+    background: get-theme-variable(background-color-primary);
+    margin-left: 1.5rem;
+    padding: 0 5px;
+    transition: all 0.125s cubic-bezier(0.2, 0, 0.03, 1);
+  }
+}
+
+textarea::placeholder {
+  color: get-theme-variable(input-text-color);
+}
+
+textarea {
+  font-weight: normal;
+  display: block;
+  white-space: break-spaces;
+  transition: all 0.5s ease;
+  min-height: 37px;
+  width: 100%;
+  border: 1px solid get-theme-variable(outline-color);
+  background-color: get-theme-variable(background-color-primary);
+  border-radius: 5px;
+
+  &:focus {
+    outline: 0;
+    border-color: get-theme-variable(input-text-color);
+
+    &::placeholder {
+      color: transparent;
+    }
+
+    ~ label {
+      color: transparent;
+    }
+  }
+
+  &:valid {
+    ~ label {
+      color: transparent;
+    }
+  }
+
+  &:disabled {
+    cursor: unset;
+    filter: unset;
+    background-color: get-theme-variable(disabled-color);
+  }
+
+  &:hover {
+    border-color: get-theme-variable(input-text-color);
+  }
+}
+
+.medium {
+  min-height: 40px;
+  padding-left: 13px;
+}
+
+.small {
+  min-height: 30px;
+  padding-left: 13px;
+}
+
+.textarea-style {
+  width: 100%;
+  min-height: 90px;
+  color: get-theme-variable(input-text-color);
+  padding: 10px 13px;
+  font: 13px roboto;
+  font-weight: 400;
+  resize: vertical;
+}
+
+.required-star-style {
+  margin-left: -2px;
+  padding-top: 10px;
+}
+
+.placeholder-text-style {
+  position: absolute;
+  color: get-theme-variable(input-text-color);
+  margin: 0 5px;
+  font-size: 13px;
+  top: 0;
+  left: 0;
+  transition: all 0.25s cubic-bezier(0.2, 0, 0.03, 1);
+  pointer-events: none;
+}
+
+
+.error-label {
+  border-color: get-theme-variable(error-color) !important;
+
+  textarea {
+    border-color: get-theme-variable(error-color) !important;
+    //background-color: transparent;
+  }
+
+  .required-star-style {
+    color: get-theme-variable(error-color);
+  }
+
+  .placeholder-text-style {
+    color: get-theme-variable(error-color);
+  }
+}
+
+.error-style {
+  position: relative;
+  float: right;
+  padding: 0 8px;
+  color: get-theme-variable(error-color);
+  font-size: 12px;
+}
+
+.primary {
+  color: get-theme-variable(primary);
+}
+
+.secondary {
+  color: get-theme-variable(warn);
+}
+
+.light {
+  color: get-theme-variable(light);
+}
+
+.no-outline {
+  outline: 0;
+  border: none;
+}
+
+.label-style {
+  padding: 0 5px;
+  font-size: 13px;
+  color: get-theme-variable(input-text-color);
+}

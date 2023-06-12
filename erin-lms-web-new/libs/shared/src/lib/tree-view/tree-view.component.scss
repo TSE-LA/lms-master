@@ -1,0 +1,79 @@
+@use "libs/shared/src/lib/theme/styles/theme" as *;
+
+.node {
+  display: grid;
+  margin: 5px 5px 5px 10px;
+  background-color: get-theme-variable(background-color-primary);
+  color: get-theme-variable(text-color-primary);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  z-index: 15;
+}
+
+.dropdown {
+  display: grid;
+  grid-template-columns: 20px 80px;
+}
+
+.table {
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+  .click {
+    margin-right: 16px;
+  }
+
+  .circle {
+    margin-right: 16px;
+  }
+
+  .tree-value {
+    width: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .info {
+    margin-bottom: 10px;
+  }
+}
+
+.click {
+  width: 20px;
+  height: 20px;
+}
+
+.tree-view-container {
+  display: grid;
+  grid-template-rows: auto;
+}
+
+.open {
+  transform: rotate(90deg);
+}
+
+.info {
+  border-radius: 2px;
+
+  &:hover {
+    cursor: pointer;
+    background-color: get-theme-variable(dropdown-background-color-hover);
+  }
+}
+
+.selected {
+  background-color: get-theme-variable(dropdown-background-color-hover);
+}
+
+.circle {
+  margin-left: 10px;
+  height: 5px;
+  width: 5px;
+  border-radius: 50%;
+  background-color: get-theme-variable(text-color-secondary);
+  align-self: center;
+}

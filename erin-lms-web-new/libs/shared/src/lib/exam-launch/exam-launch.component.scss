@@ -1,0 +1,52 @@
+@use "../theme/styles/theme" as *;
+@use "../theme/styles/layout/breakpoints" as *;
+
+.container {
+  width: 65vw;
+  @include media-breakpoint-down(media_md) {
+    width: 90vw;
+  }
+}
+
+.button {
+  display: grid;
+  place-items: center;
+}
+
+.section {
+  background-color: get-theme-variable(background-color-primary);
+  display: grid;
+  padding: 25px;
+  grid-row-gap: 15px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.description {
+  display: grid;
+  align-items: center;
+  color: get-theme-variable(text-color-primary);
+  font-size: 15px;
+  font-weight: 500;
+  margin-left: 30px;
+}
+
+.name {
+  align-items: end;
+}
+
+.loading {
+  .description, .details {
+    margin-left: 30px;
+    font-size: 0;
+    color: transparent;
+    @include shimmer(11s);
+  }
+
+  .description {
+    height: 30px;
+    width: 80%;
+  }
+}

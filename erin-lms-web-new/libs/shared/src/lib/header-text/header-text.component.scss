@@ -1,0 +1,38 @@
+@use "../theme/styles/theme" as *;
+@use "../theme/styles/layout/breakpoints" as *;
+
+.header-text {
+  font-weight: normal;
+  color: get-theme-variable(input-text-color);
+  @include media-breakpoint-down(media_sm) {
+    margin: 10px;
+  }
+}
+
+.margin {
+  margin: 16px 16px 16px 30px;
+}
+
+.bold {
+  font-weight: bolder;
+  color: get-theme-variable(header-text-color);
+}
+
+.large {
+  font-size: 1.5em;
+}
+
+.medium {
+  font-size: 1.2em;
+}
+
+.small {
+  font-size: 1em;
+}
+
+.loader {
+  margin: 16px 16px 16px 30px;
+  height: 30px;
+  width: 500px;
+  @include shimmer(11s);
+}

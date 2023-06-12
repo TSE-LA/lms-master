@@ -1,0 +1,78 @@
+@mixin media_s {
+  @media(min-width: 520px) {
+    @content;
+  }
+}
+
+@mixin media_sm {
+  @media(min-width: 600px) {
+    @content;
+  }
+}
+
+@mixin media_md {
+  @media(min-width: 800px) {
+    @content;
+  }
+}
+
+@mixin media_lg {
+  @media(min-width: 920px) {
+    @content;
+  }
+}
+
+@mixin media_xl {
+  @media(min-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin media_xxl {
+  @media(min-width: 1800px) {
+    @content;
+  }
+}
+
+.online-course-header {
+  width: 100%;
+  display: flex;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 10px;
+  justify-content: flex-end;
+  place-items: flex-end;
+  align-items: center;
+  flex-direction: column;
+
+  @include media_sm {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include media_md {
+    display: flex;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+
+  & > div {
+    display: block;
+    width: 100%;
+    margin-bottom: 1em;
+
+    @include media_lg {
+      width: 167px;
+    }
+  }
+
+  @include media_sm {
+    flex-direction: row;
+  }
+}
+
+.margin-top {
+  margin-top: 1.2em;
+}
+
+.align-right {
+  text-align: right;
+}

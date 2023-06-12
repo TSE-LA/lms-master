@@ -1,0 +1,64 @@
+@use "../../theme/styles/theme" as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Roboto, sans-serif;
+}
+
+.calendar-skeleton-loader {
+  width: 98%;
+  height: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid get-theme-variable(calendar-border-color);
+}
+
+.weekdays {
+  width: 100%;
+  height: 6%;
+  display: grid;
+  grid-template-columns: repeat(7, auto);
+  background-image: linear-gradient(to right, #fbfafa 0%, #efeff1 20%, #e1e2e4 40%, #fbfbfb 100%);
+  align-items: center;
+  animation: shimmer 2s linear infinite;
+}
+
+.weekdays div {
+  font-size: 15px;
+  font-weight: 550;
+  letter-spacing: 0.1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.days {
+  width: 100%;
+  height: 94%;
+  display: grid;
+  flex-wrap: wrap;
+  grid-template-columns: repeat(7, 14.28%);
+  grid-template-rows: repeat(6, 16.66%);
+}
+
+.day {
+  display: grid;
+  grid-template-rows: 15% 85%;
+  min-height: 30px;
+  min-width: 45px;
+  font-size: get-theme-variable(calendar-node-font-size);
+  border: 1px solid get-theme-variable(calendar-border-color);
+  transition: background-color 0.2s;
+  position: relative;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 2000px 0;
+  }
+}

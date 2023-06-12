@@ -1,0 +1,24 @@
+apply plugin: 'war'
+
+dependencies {
+  compile project(':erin-aim-spring')
+  compile project(':erin-aim-repository-mongo')
+
+  compile project(':erin-lms-base-dms')
+  compile project(':erin-lms-base-shiro')
+  compile project(':erin-lms-base-analytics')
+
+  compile project(':erin-lms-jarvis-rest')
+  compile project(':erin-lms-jarvis-notification')
+  compile project(':erin-lms-jarvis-mongo')
+
+  compile 'mn.erin.common:erin-swagger-ui:1.0.0'
+  compile 'mn.erin.dms:erin-alfresco-connector:1.1.0'
+
+  compile lib.spring.mvc
+  compile lib.commons.fileupload
+  compile lib.hibernate.validator
+
+  compileOnly lib.javax.servlet
+  compile group: 'javax.validation', name: 'validation-api', version: '2.0.0.Final'
+}

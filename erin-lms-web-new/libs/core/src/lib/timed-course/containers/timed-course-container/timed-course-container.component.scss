@@ -1,0 +1,44 @@
+@use "libs/shared/src/lib/theme/styles/theme" as *;
+
+.main-wrapper {
+  display: grid;
+  grid-template-rows: 10% 10% 80%;
+  position: relative;
+  background-color: get-theme-variable(calendar-background-color);
+  height: unset;
+  min-height: 87vh;
+  width: 81vw;
+  min-width: fit-content;
+  box-shadow: 2px 1px 2px 0 get-theme-variable(calendar-box-shadow);
+  padding: 0 15px;
+}
+
+.header-text {
+  margin-top: 10px
+}
+
+.state-picker {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(50px, auto));
+  grid-column-gap: 25px;
+  place-content: center;
+}
+
+.header {
+  padding-top: 15px;
+  display: flex;
+}
+
+.action-toolbar-dropdowns {
+  display: flex
+}
+
+.create-course {
+  margin: 19px 0 0 10px;
+}
+
+.readership-btn-style {
+  line-height: 3;
+  margin: 20px 5px 0 20px;
+  cursor: pointer;
+}

@@ -1,0 +1,7 @@
+dependencies {
+  implementation 'junit:junit:4.12'
+    compile project(':erin-lms-base-domain')
+  compile project(':erin-lms-base-scorm')
+
+  compile lib.json.org
+}

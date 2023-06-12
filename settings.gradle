@@ -1,0 +1,39 @@
+rootProject.name = 'ERIN LMS'
+
+/*
+ * (C)opyright, 2019, ERIN SYSTEMS LLC
+ * The source code is protected by copyright laws and international copyright
+ * treaties, as well as other intellectual property laws and treaties.
+ * All rights reserved.
+ */
+
+// LMS old web
+//include ":erin-lms-web"
+//project(":erin-lms-web").projectDir = file("erin-lms-web")
+
+// LMS new web
+include ":erin-lms-web-new"
+project(":erin-lms-web-new").projectDir = file("erin-lms-web-new")
+
+// LMS AIM
+includeProjects('erin-lms-aim')
+
+// LMS BASE
+includeProjects('erin-lms-java/erin-lms-base')
+
+// JARVIS
+includeProjects('erin-lms-java/erin-lms-jarvis')
+
+// UNITEL
+includeProjects('erin-lms-java/erin-lms-unitel', ['legacy'])
+includeProjects('erin-lms-java/erin-lms-unitel/legacy')
+
+def includeProjects(def dirName, def exclude = []) {
+  file(dirName).eachDir { subDir ->
+    if (!exclude.contains(subDir.name)) {
+      include subDir.name
+      project(":${subDir.name}").projectDir = subDir
+    }
+  }
+}
+

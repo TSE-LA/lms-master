@@ -1,0 +1,60 @@
+@use "libs/shared/src/lib/theme/styles/theme" as *;
+
+.scroll-style {
+  overflow-x: hidden;
+  overflow-y: auto;
+  margin-top: 13px;
+}
+
+.scroll-x {
+  overflow: auto;
+}
+
+div.primary::-webkit-scrollbar-thumb {
+  padding-top: 100px !important;
+  border-radius: get-theme-variable(border-radius-5);
+  background: get-theme-variable(scrollbar-thumb-primary-background-color);
+}
+
+div.secondary::-webkit-scrollbar-thumb {
+  border-radius: get-theme-variable(border-radius-5);
+  background: get-theme-variable(scrollbar-thumb-secondary-background-color);
+}
+
+div.transparent::-webkit-scrollbar-thumb {
+  border-radius: get-theme-variable(border-radius-5);
+  background: transparent;
+}
+
+div.small::-webkit-scrollbar {
+  width: get-theme-variable(scrollbar-small-width);
+  height: get-theme-variable(scrollbar-small-width);
+}
+
+div.medium::-webkit-scrollbar {
+  width: get-theme-variable(scrollbar-medium-width);
+  height: get-theme-variable(scrollbar-medium-width);
+}
+
+div.large::-webkit-scrollbar {
+  width: get-theme-variable(scrollbar-large-width);
+  height: get-theme-variable(scrollbar-large-width);
+}
+::-webkit-scrollbar {
+  margin-left: 10px;
+}
+
+div.border::-webkit-scrollbar-track {
+  border: 0.5px solid get-theme-variable(scrollbar-border-color);
+  border-radius: get-theme-variable(border-radius-5);
+}
+::-webkit-scrollbar-track {
+  background: get-theme-variable(scrollbar-track-background-color);
+}
+::-webkit-scrollbar-thumb {
+  border-radius: get-theme-variable(border-radius-5);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: get-theme-variable(scrollbar-thumb-background-color-hover);
+}

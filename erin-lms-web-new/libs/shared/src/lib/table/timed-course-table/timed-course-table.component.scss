@@ -1,0 +1,150 @@
+@use "../../theme/styles/theme" as *;
+
+* {
+  color: get-theme-variable(text-color-primary);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.container {
+  display: grid;
+  grid-template-rows: 1fr 1fr 7fr 1fr;;
+  min-height: 30vh;
+  min-width: 650px;
+  height: 99%;
+}
+
+.column-filter {
+  place-items: center;
+  width: 90%;
+}
+
+.column-names, .timed-course-table-row, .column-filters {
+  display: grid;
+  grid-template-columns: 1.5fr repeat(2, 1fr) 2fr repeat(4, 1fr) 0.3fr;
+  grid-column-gap: 2px;
+}
+
+.column-names, .column-filters {
+  align-items: center;
+}
+
+.column-names {
+  font-size: get-theme-variable(table-header-font-size);
+  font-weight: bold;
+  background-color: get-theme-variable(calendar-header-background);
+
+  &:first-child {
+    padding-left: 15px;
+  }
+}
+
+span {
+  word-break: keep-all;
+  overflow: hidden;
+}
+
+.timed-course-table-row {
+  align-content: center;
+  padding-right: 10px;
+
+  div {
+    padding: 5px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+}
+
+.keyword, .code, .start-date, .end-date, .author, .created-date {
+  margin-top: 5px;
+  text-align: center;
+}
+
+.course-name {
+  margin-top: 5px;
+}
+
+.timed-course-table-row:hover {
+  background-color: get-theme-variable(table-row-hover-color);
+}
+
+.table {
+  display: grid;
+  grid-template-rows: repeat(10, minmax(35px, auto));
+  grid-row-gap: 2px;
+}
+
+.sort {
+  display: flex;
+
+  &:hover {
+    cursor: pointer;
+
+    .hidden {
+      visibility: visible;
+      filter: grayscale(80%);
+    }
+  }
+}
+
+.icon {
+  margin-left: 5px;
+  place-self: center;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.new-course {
+  background-color: get-theme-variable(promotion-table-new-row-background);
+
+  &:hover {
+    background-color: get-theme-variable(promotion-table-new-row-background);
+  }
+}
+
+.course-category {
+  display: grid;
+  grid-template-columns: 30px calc(100% - 30px);
+}
+
+.status {
+  display: grid;
+  place-items: center;
+}
+
+.notification {
+  padding: unset;
+  background-color: get-theme-variable(secondary);
+  border-radius: 50%;
+  height: 15px;
+  width: 15px;
+}
+
+.paginator {
+  justify-self: end;
+  margin-right: 15px;
+}
+
+.context-button {
+  margin-top: 5px;
+  display: none;
+}
+
+.loading {
+  .table, .column-filters {
+    font-size: 0;
+    @include shimmer(5s);
+  }
+
+}
+
+#drop-down {
+  position: fixed;
+}

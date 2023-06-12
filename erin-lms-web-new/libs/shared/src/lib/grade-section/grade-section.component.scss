@@ -1,0 +1,47 @@
+@use "../theme/styles/theme" as *;
+
+.grade-container {
+  display: grid;
+  grid-template-rows: repeat(3, 33.3%);
+  border-bottom: 1px solid get-theme-variable(grade-border-color);
+  grid-row-gap: 5px;
+  height: 120px;
+}
+
+.no-grades {
+  display: grid;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.keys, .values {
+  color: get-theme-variable(grade-text-color);
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(6, 16.6%);
+}
+
+.value, .key {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.keys {
+  border-radius: 3px;
+  background-color: get-theme-variable(grade-background-color);
+  font-weight: get-theme-variable(header-font-weight);
+}
+
+.values {
+  padding-bottom: 15px;
+}
+
+.title-container {
+  color: get-theme-variable(header-text-color);
+  font-size: get-theme-variable(header-font-size);
+  padding-left: 15px;
+  align-self: center;
+  font-weight: get-theme-variable(header-font-weight);
+}

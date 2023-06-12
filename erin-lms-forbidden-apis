@@ -1,0 +1,19 @@
+# Documentation https://github.com/policeman-tools/forbidden-apis/wiki/SignaturesSyntax
+# @SuppressForbidden annotation can be used for explicitly allowing an API at a desired location
+
+# Avoid all new instances of File (use java.nio.file.Paths and java.nio.file.Path)
+java.io.File#<init>(java.lang.String)
+java.io.File#<init>(java.lang.String,java.lang.String)
+java.io.File#<init>(java.io.File,java.lang.String)
+java.io.File#<init>(java.net.URI)
+
+# Avoid creating files via java.io.File (use java.nio.file.Files)
+java.io.File#createNewFile()
+
+# Avoid unmanaged temporary file creation (use in-house TemporaryFileApi)
+java.io.File#createTempFile(java.lang.String,java.lang.String)
+java.io.File#createTempFile(java.lang.String,java.lang.String,java.io.File)
+java.nio.file.Files#createTempFile(java.nio.file.Path,java.lang.String,java.lang.String,java.nio.file.attribute.FileAttribute[])
+java.nio.file.Files#createTempFile(java.lang.String,java.lang.String,java.nio.file.attribute.FileAttribute[])
+java.nio.file.Files#createTempDirectory(java.nio.file.Path,java.lang.String,java.nio.file.attribute.FileAttribute[])
+java.nio.file.Files#createTempDirectory(java.lang.String,java.nio.file.attribute.FileAttribute[])

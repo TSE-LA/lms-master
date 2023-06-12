@@ -1,0 +1,19 @@
+{
+  "User doesn't have any memberships!": "Хэрэглэгч группэд бүртгэлгүй байна.",
+  "LDAP authentication failed.": "Нууц үг буруу байна.",
+  "LDAP naming error while attempting to authenticate user.": "Актив директорид алдаа гарлаа системийн админтай холбоо барина уу.",
+  "Authentication failed: user data is invalid": "Нууц үг буруу байна.",
+  "Username not found!": "Хэрэглэгч системд бүртгэгдээгүй байна.",
+  "Password is incorrect!": "Нууц үг буруу байна.",
+  "User not found!": "Хэрэглэгч олдсонгүй.",
+  "Account is disabled!":  "Хэрэглэгчийг архивласан байна.",
+  "Account is locked!": "Хэрэглэгч түгжигдсэн байна.",
+  "User state is unknown!": "Хэрэглэгчийн мэдээлэл буруу хадгалагдсан байна, системийн админтай холбоо барина уу.",
+  "Given pdf cannot be rendered in time!": "Файлын хэмжээ хэтэрхий том байна, та хэмжээг эсвэл нягтралыг бууруулаад дахин оролдоно уу!",
+  "LMS_ADMIN": "Багш",
+  "LMS_SUPERVISOR": "Ахлах",
+  "LMS_MANAGER": "Менежер",
+  "LMS_USER": "Суралцагч",
+  "Could not find interaction!": "Шалгалт өгөөгүй байна!",
+  "Questions not found!": "Шалгалт асуултгүй байна!"
+}

@@ -1,0 +1,53 @@
+@use "../theme/styles/theme" as *;
+
+input {
+  border: 2px solid white;
+  box-shadow: 0 0 0 1px get-theme-variable(primary);
+  appearance: none;
+  border-radius: 50%;
+  background-color: get-theme-variable(background-color-primary);
+  transition: all ease-in 0.2s;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:checked {
+    background-color: get-theme-variable(primary);
+  }
+
+  &:disabled {
+    cursor: default;
+    box-shadow: 0 0 0 1px get-theme-variable(disabled-color);
+
+    &:checked {
+      background-color: get-theme-variable(disabled-color);
+    }
+  }
+}
+
+.margin {
+  margin-right: 10px;
+}
+
+.medium {
+  width: 12px;
+  height: 12px;
+}
+
+.large {
+  width: 15px;
+  height: 15px;
+}
+
+.label-medium {
+  font-size: 13px;
+}
+
+.label-large {
+  font-size: 16px;
+}
+
+label {
+  color: get-theme-variable(text-color-primary);
+}

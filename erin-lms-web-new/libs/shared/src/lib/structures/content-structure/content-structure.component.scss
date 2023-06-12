@@ -1,0 +1,147 @@
+@use "libs/shared/src/lib/theme/styles/theme" as *;
+.structure-container{
+  height: inherit;
+  overflow: auto;
+}
+.module {
+  height: 36px;
+  display: inline-flex;
+  font-size: 15px;
+  width: 100%;
+  align-items: center;
+  margin-bottom: 8px;
+  border: get-theme-variable(input-border-radius) solid get-theme-variable(outline-color);
+  border-radius: 5px;
+  background-color: get-theme-variable(content-module-background);
+  transition: transform ease 0.3s;
+}
+
+.module-input-area {
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  width: calc(100% - 62px);
+}
+
+.drag-button{
+  height: 100%;
+  display: inline-flex;
+  align-items: center;
+  border: get-theme-variable(input-border-radius) solid get-theme-variable(outline-color);
+  border-left: none;
+  border-bottom: none;
+  border-top: none;
+  justify-content: center;
+  width: 30px;
+  &:hover{
+    cursor: pointer;
+  }
+}
+.trash-button{
+  height: 100%;
+  display: inline-flex;
+  align-items: center;
+  background-color: get-theme-variable(warn);
+  border-radius: 0 get-theme-variable(border-radius-5) get-theme-variable(border-radius-5) 0;
+  border: get-theme-variable(input-border-radius) solid get-theme-variable(warn);
+  border-right: none;
+  border-bottom: none;
+  border-top: none;
+  justify-content: center;
+  width: 30px;
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+.module-disabled {
+  border-radius: get-theme-variable(border-radius-5);
+  border-left: get-theme-variable(input-border-radius) solid get-theme-variable(outline-color);
+  border-right: get-theme-variable(input-border-radius) solid get-theme-variable(outline-color);
+  width: 100%;
+  background-color: get-theme-variable(disabled-color);
+}
+
+.section-disabled {
+  background-color: get-theme-variable(disabled-color);
+}
+
+.order-number {
+  font-size: 13px;
+  color: get-theme-variable(input-text-color);
+  margin-left: 10px;
+}
+
+.input {
+  font-size: 13px;
+  background: transparent;
+  border: none;
+  color: var(--text-color-dark);
+  width: 100%;
+}
+
+input:focus {
+  outline: none;
+}
+
+.type-icon {
+  margin-left: 5px;
+}
+
+.dropdown-section {
+  transition: transform ease 0.3s;
+}
+
+.open-module {
+  transform: rotate(-180deg);
+}
+
+.section {
+  margin-left: 60px;
+  display: inline-flex;
+  align-items: center;
+  width: calc(100% - 74px);
+  margin-bottom: 4px;
+}
+
+.section-input-area {
+  height: 36px;
+  margin-right: 16px;
+  display: inline-flex;
+  align-items: center;
+  border: get-theme-variable(input-border-radius) solid get-theme-variable(outline-color);
+  border-radius: 5px;
+  width: 100%;
+}
+
+.section-input {
+  position: relative;
+  top: 9px;
+  width: 100%;
+  margin: 0 16px 0 10px;
+}
+
+.reserve-space {
+  margin-right: 46px;
+}
+
+.trash-can {
+  width: 44px;
+}
+
+.drag-over {
+  border: 2px dashed get-theme-variable(primary);
+  border-radius: get-theme-variable(border-radius-5);
+}
+
+.uploaded-icon {
+  padding: 0 6px;
+}
+
+.shimmer {
+  height: 30px;
+  margin-top: 10px;
+  width: 100%;
+  @include shimmer(11s);
+}
+

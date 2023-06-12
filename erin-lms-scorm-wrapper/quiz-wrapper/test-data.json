@@ -1,0 +1,44 @@
+{
+  "data": [
+    {
+      "question": "Boo yah?",
+      "answers": [
+        {
+          "value": "Boo nah?",
+          "isCorrect": true,
+          "score": 1
+        },
+        {
+          "value": "Boo nah?",
+          "isCorrect": true,
+          "score": 1
+        },
+        {
+          "value": "Boo nah?",
+          "isCorrect": true,
+          "score": 1
+        }
+      ]
+    },
+    {
+      "question": "Boo yah?",
+      "answers": [
+        {
+          "value": "Boo nah?",
+          "isCorrect": true,
+          "score": 1
+        },
+        {
+          "value": "Boo nah?",
+          "isCorrect": true,
+          "score": 1
+        },
+        {
+          "value": "Boo nah?",
+          "isCorrect": true,
+          "score": 1
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,190 @@
+/*!
+ * Copyright (C) ERIN SYSTEMS LLC, 2021. All rights reserved.
+ *
+ * The source code is protected by copyright laws and international copyright treaties, as well as
+ * other intellectual property laws and treaties.
+ */
+
+@mixin shimmer($speed: 11s) {
+  background-image: linear-gradient(to right, #fbfafa 0%, #efeff1 20%, #e1e2e4 40%, #fbfbfb 100%);
+  align-items: center;
+  animation: shimmer $speed linear infinite;
+}
+
+.baseline {
+  align-items: baseline;
+}
+
+.margin-all {
+  margin: 13px;
+}
+
+.margin-top {
+  margin-top: 13px;
+}
+
+.margin-bottom-medium {
+  margin-bottom: 26px;
+}
+
+.margin-left {
+  margin-left: 10px;
+}
+
+.margin-left-double {
+  margin-left: 22px;
+}
+
+.margin-left-auto {
+  margin-left: auto;
+}
+
+.margin-right-double {
+  margin-right: 22px;
+}
+
+
+.margin-right {
+  margin-right: 10px;
+}
+
+.margin-top-large {
+  margin-top: 35px;
+}
+
+.margin-bottom {
+  margin-bottom: 13px;
+}
+
+.margin-bottom-large {
+  margin-bottom: 40px;
+}
+
+.padding {
+  padding: 10px;
+}
+
+.padding-bottom {
+  padding-bottom: 18px;
+}
+
+.padding-bottom-medium {
+  padding-bottom: 26px;
+}
+
+.center {
+  display: grid;
+  place-items: center;
+}
+
+.flex {
+  display: flex;
+}
+.tree-flex{
+  display:flex;
+  justify-content:center;
+}
+.inline-flex {
+  display: inline-flex;
+}
+
+.place-flex-end {
+  place-items: flex-end;
+}
+
+.flex-between {
+  justify-content: space-between;
+}
+
+.flex-around {
+  justify-content: space-around;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.justify-start {
+  justify-content: flex-start;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.padding {
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.side-margin {
+  margin-right: 16px;
+  margin-left: 16px;
+}
+
+.spacer {
+  flex-grow: 1;
+}
+
+.two-part-header {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+}
+
+.place-self-end {
+  place-self: end;
+  margin-bottom: 15px;
+  margin-right: 30px;
+}
+
+.sidenav-content-secondary {
+  overflow: auto;
+  background-color: #E9E9F0;
+  height: calc(100vh - 92px);
+  padding: 16px;
+  display: grid;
+  place-items: center;
+}
+
+.sidenav-content-primary {
+  background-color: #FFFFFF;
+  padding: 0 13px 0 13px;
+  display: block;
+  height: calc(100vh - 62px);
+}
+
+.create-page-return-btn {
+  width: 68vw;
+}
+
+.pushMainArea {
+  $sidenav: 228px;
+  margin-left: #{$sidenav + 5px};
+}
+
+.collapseMain {
+  margin-left: 50px;
+}
+
+.originalMain {
+  margin-left: 0;
+}
+
+.width-full {
+  width: 100%;
+}
+.container-tree-view {
+  display: grid;
+  grid-template-columns: 2fr 10fr;
+  width: calc(72vw + 30px);
+  grid-column-gap: 10px;
+}
+.margin-left-sp{
+  margin-left: 35px;
+}

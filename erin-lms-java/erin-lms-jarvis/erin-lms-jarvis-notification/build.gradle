@@ -1,0 +1,4 @@
+dependencies {
+  compile project(':erin-lms-jarvis-domain')
+  compile project(':erin-lms-base-notification')
+}

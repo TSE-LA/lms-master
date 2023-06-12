@@ -1,0 +1,5 @@
+dependencies {
+  compile project(':erin-lms-base-aim')
+  compile project(':erin-lms-base-mongo')
+  compile project(':erin-lms-unitel-domain')
+}

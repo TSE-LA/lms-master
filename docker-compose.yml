@@ -1,0 +1,81 @@
+version: "3.7"
+
+services:
+  lms:
+    image: registry.erin.systems/erin-lms-server:dev-1
+    depends_on:
+      - mongo
+    environment:
+      JAVA_OPTS: "
+        -Dldap.type=${LDAP_TYPE}
+        -Dsession.timeout=${SESSION_TIMEOUT}
+        -DREALM_TYPE=${REALM_TYPE}
+        -DdomainName=${DOMAIN_NAME}
+        -Dldap.exclude=${LDAP_EXCLUDE}
+        -Dldap.url=ldap://${LDAP_HOST}:${LDAP_PORT}
+        -Dldap.baseDn=${LDAP_BASE}
+        -Dldap.tenantId=${LDAP_TENANT_ID}
+        -Dldap.username=${LDAP_USERNAME}
+        -Dldap.password=${LDAP_PASSWORD}
+        -Dldap.principalSuffix=${LDAP_SUFFIX}
+        -Dlms.mongodb.host=mongo
+        -Dlms.mongodb.username=${DB_USERNAME}
+        -Dlms.mongodb.password=${DB_PASS}
+        -Dspring.mail.host=${MAIL_HOST}
+        -Dspring.mail.from=${MAIL_USERNAME}
+        -Dspring.mail.port=${MAIL_PORT}
+        -Dspring.mail.username=${MAIL_USERNAME}
+        -Dspring.mail.password=${MAIL_PASSWORD}
+        -Dspring.mail.protocol=smtp
+        -Dspring.mail.smtp.starttls.enable=false
+        -Dspring.mail.smtp.ssl.enable=false
+        -Dspring.mail.smtp.auth=true
+        -Duser.timezone=Asia/Ulaanbaatar
+        -Xms2g -Xmx4g
+        -Djava.rmi.server.hostname=localhost
+        -Dcom.sun.management.jmxremote
+        -Dcom.sun.management.jmxremote.port=9010
+        -Dcom.sun.management.jmxremote.rmi.port=9010
+        -Dcom.sun.management.jmxremote.authenticate=false
+        -Dcom.sun.management.jmxremote.ssl=false
+        "
+      CATALINA_OPTS: "-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:8888"
+      ALFRESCO_HOST: "http://localhost:8080"
+      ALFRESCO_USERNAME: "admin"
+      ALFRESCO_PASSWORD: "alfresco_secret"
+    ports:
+      - 127.0.0.1:8040:8040
+      - 127.0.0.1:8888:8888
+    networks:
+      - lms-network
+  mongo:
+    image: mongo:5.0.5
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: "${DB_USERNAME}"
+      MONGO_INITDB_ROOT_PASSWORD: "${DB_PASS}"
+    ports:
+      - "127.0.0.1:20381:27017"
+    volumes:
+      - lms_mongo:/data/db
+    networks:
+      - lms-network
+  smtp4dev:
+    image: rnwood/smtp4dev:v3
+    profiles:
+      - smtp4dev
+    ports:
+      - 127.0.0.1:5000:80 # web client
+      - 127.0.0.1:2525:25 # smpt port
+      - 127.0.0.1:1143:143 # imap port
+    volumes:
+      - smtp4dev-data:/smtp4dev
+    environment:
+      RelayOptions__Login: jarvis
+      RelayOptions__Password: Jarvis!23
+
+volumes:
+  lms_mongo:
+  smtp4dev-data:
+
+networks:
+  lms-network:

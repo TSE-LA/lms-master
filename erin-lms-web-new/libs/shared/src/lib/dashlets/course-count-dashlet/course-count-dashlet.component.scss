@@ -1,0 +1,181 @@
+@use "../../theme/styles/theme" as *;
+@use "../../theme/styles/layout/breakpoints" as *;
+
+::-webkit-scrollbar {
+  width: get-theme-variable(scrollbar-small-width);
+}
+
+::-webkit-scrollbar-track {
+  background: get-theme-variable(scrollbar-track-background-color);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: get-theme-variable(border-radius-5);
+  background: get-theme-variable(scrollbar-thumb-primary-background-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: get-theme-variable(scrollbar-thumb-background-color-hover);
+}
+
+
+.dashlet {
+  display: grid;
+  grid-row-gap: 5px;
+  color: get-theme-variable(text-color-primary);
+  background-color: get-theme-variable(dashlet-background-color);
+  padding: 15px;
+  min-height: 300px;
+  box-shadow: 2px 1px 2px 0 get-theme-variable(calendar-box-shadow);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  @include media-breakpoint-down(media_sm) {
+    padding-left: 10px;
+  }
+}
+
+.total-count {
+  font-size: 15px;
+  color: get-theme-variable(primary);
+  font-weight: 600;
+  padding-left: 5px;
+}
+
+.header {
+  display: grid;
+  grid-template-columns: 7fr 1fr;
+  grid-column-gap: 5px;
+  min-height: 50px;
+}
+
+.chart {
+  display: grid;
+  overflow: auto;
+}
+
+.bottom {
+  max-height: 400px;
+  min-height: 400px;
+  align-content: center;
+  display: grid;
+}
+
+.chart-item {
+  display: grid;
+  grid-template-columns: 2fr 8fr;
+  grid-column-gap: 5px;
+  align-items: center;
+  min-height: 40px;
+  max-height: 40px;
+  align-self: center;
+
+  &:hover {
+    .count-meter {
+      filter: brightness(120%);
+    }
+  }
+}
+
+.background-line {
+  position: relative;
+  height: 1px;
+  background-color: get-theme-variable(outline-color);
+  z-index: 5;
+  margin-top: 5px;
+}
+
+.count-meter {
+  z-index: 6;
+  background-color: get-theme-variable(primary);
+  height: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.category-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding-left: 5px;
+}
+
+.category-count {
+  display: flex;
+  flex-flow: row nowrap
+}
+
+.title{
+  font-weight: 500;
+  font-size: 20px;
+  padding-left: 5px;
+  @include media-breakpoint-down(media_s) {
+    font-size: 15px;
+  }
+}
+
+.count-range {
+  width: 80%;
+  margin-left: 20%;
+  height: 80%;
+  display: grid;
+  grid-template-columns: 0.1fr repeat(10, 1fr);
+}
+
+.count-number {
+  display: grid;
+  place-items: end;
+  font-size: 13px;
+  color: get-theme-variable(dashlet-course-count-text-color);
+}
+
+.select-role {
+  display: grid;
+}
+
+.loading {
+  .title, .total-count, .category-name, .count-number {
+    font-size: 0;
+    pointer-events: none;
+  }
+
+  .count-meter, .background-line {
+    pointer-events: none;
+    height: 0;
+  }
+
+  .header, .bottom, .not-found {
+    pointer-events: none;
+    @include shimmer(11s);
+  }
+
+  .not-found {
+    font-size: 0;
+  }
+
+  .select-role {
+    pointer-events: none;
+    display: none;
+  }
+
+  .img {
+    display: none;
+  }
+}
+
+.hide-dashlet {
+  display: none;
+}
+
+.not-found {
+  display: grid;
+  place-items: center;
+  height: 250px;
+  font-size: 15px;
+}
+
+.img {
+  width: 150px;
+  height: 150px;
+}

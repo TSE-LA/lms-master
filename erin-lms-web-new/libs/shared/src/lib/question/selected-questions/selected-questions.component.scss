@@ -1,0 +1,34 @@
+@use "libs/shared/src/lib/theme/styles/theme" as *;
+
+.chosen-questions {
+  background-color: get-theme-variable(question-chosen-background);
+  color: get-theme-variable(text-color-dark);
+  border-radius: 5px;
+  padding: 5px 20px;
+  margin-bottom: 10px;
+  height: 25px;
+  align-items: center;
+  width: calc(100% - 89px);
+}
+
+
+.grand-total-score {
+  background-color: get-theme-variable(question-chosen-background);
+  color: get-theme-variable(text-color-dark);
+  font-size: 12px;
+  width: fit-content;
+  border-radius: 10px;
+  padding: 2px 5px;
+}
+
+.question-name {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.question-container {
+  max-height: 350px;
+  overflow: auto;
+}

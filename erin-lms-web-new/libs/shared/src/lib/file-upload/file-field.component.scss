@@ -1,0 +1,42 @@
+@use "../theme/styles/theme" as *;
+
+.file-field-container {
+  padding-bottom: 18px;
+}
+
+.file-field-style {
+  width: 100%;
+  display: flex;
+  border: 1px solid get-theme-variable(outline-color);
+  border-radius: 5px;
+  height: 33px;
+}
+
+.readonly-field {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background: transparent;
+  border: none;
+  outline: none;
+  height: 35px;
+  margin-left: 11px;
+  color: get-theme-variable(input-text-color);
+}
+
+.loading {
+  .shimmer {
+    height: 35px;
+    width: 100%;
+    @include shimmer(11s);
+  }
+}
+
+jrs-button {
+  margin-right: 10px;
+}
+.label-style {
+  padding: 0 5px;
+  font-size: 13px;
+  color: get-theme-variable(input-text-color);
+}

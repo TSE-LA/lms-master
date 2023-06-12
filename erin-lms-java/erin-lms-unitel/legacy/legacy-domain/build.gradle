@@ -1,0 +1,6 @@
+dependencies {
+  compile project(':erin-lms-base-aim')
+
+  compile 'mn.erin.domain:erin-domain-base:1.0.0'
+  compile lib.erin.common
+}

@@ -1,0 +1,71 @@
+@use "../../theme/styles/theme" as *;
+@use "../../theme/styles/layout/breakpoints" as *;
+
+@mixin detailsPaddingColumns() {
+  padding-top: 5px;
+  padding-left: 30px;
+  padding-right: 30px;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  @include media-breakpoint-down(media_sm) {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+.event-row {
+  @include detailsPaddingColumns;
+}
+
+.description-name, .description-value {
+  font-size: 14px;
+  display: grid;
+  grid-template-rows: repeat(5, 20%);
+}
+
+.description-name {
+  padding-right: 16px;
+  color: get-theme-variable(calendar-preview-text-color);
+}
+
+.description-value {
+  font-weight: 600;
+  color: get-theme-variable(calendar-node-text-color);
+  text-align: right;
+
+  &:hover {
+    cursor: default;
+  }
+}
+
+.name, .value {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.loader {
+  @include detailsPaddingColumns;
+
+  .right-container {
+    display: grid;
+    place-items: end;
+  }
+
+  .right {
+    display: grid;
+    place-items: end;
+    text-align: right;
+  }
+
+  .shimmer {
+    height: 30px;
+    margin-top: 10px;
+    width: 200px;
+    @include shimmer(11s);
+  }
+}
+
+

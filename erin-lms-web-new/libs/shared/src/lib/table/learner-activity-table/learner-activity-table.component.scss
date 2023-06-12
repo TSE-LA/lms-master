@@ -1,0 +1,147 @@
+@use "../../theme/styles/theme" as *;
+
+.container {
+  color: get-theme-variable(text-color-primary);
+  display: grid;
+  grid-template-rows: 0.7fr 1fr 7fr 0.3fr;
+  grid-row-gap: 5px;
+  min-height: 30vh;
+  user-select: none;
+  min-width: 80vw;
+  max-width: 90vw;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.column-names, .table-row, .column-filters {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 2px;
+}
+
+.column-filter {
+  place-items: center;
+  width: 90%;
+}
+
+.column-names, .column-filters {
+  align-items: center;
+}
+
+.column-names {
+  font-size: get-theme-variable(table-header-font-size);
+  font-weight: bold;
+  background-color: get-theme-variable(calendar-header-background);
+
+  &:first-child {
+    padding-left: 15px;
+  }
+}
+
+.table-row {
+  align-content: center;
+  padding-right: 10px;
+
+  div {
+    padding: 5px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+}
+
+.table-column {
+  display: grid;
+  place-items: start;
+  margin-left: 15px;
+}
+
+.timed-course-table-row:hover {
+  background-color: get-theme-variable(promotion-table-active-row-background);
+}
+
+.table {
+  display: grid;
+  grid-template-rows: repeat(10, minmax(35px, auto));
+  grid-row-gap: 2px;
+}
+
+.course-category {
+  display: grid;
+  grid-template-columns: 30px calc(100% - 30px);
+}
+
+.status {
+  display: grid;
+  place-items: center;
+}
+
+.paginator {
+  justify-self: end;
+  margin-right: 15px;
+}
+
+.loading {
+  .column-names, .table, .column-filters {
+    font-size: 0;
+    @include shimmer(5s);
+  }
+
+  #status, .column-filter {
+    display: none;
+  }
+}
+
+#status {
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 100%;
+  background-color: get-theme-variable(table-progress-background);
+  border-radius: 1.5em;
+  justify-self: center;
+  text-shadow: -1px -1px 0 #a1a1a1, 1px -1px 0 #b7b6b6, -1px 1px 0 #cec3c3, 1px 1px 0 #b8b4b4;
+  color: get-theme-variable(dashlet-status-text-color);
+
+  span {
+    grid-row-start: 1;
+    grid-column-start: 1;
+    justify-self: center;
+  }
+
+  div {
+    grid-row-start: 1;
+    grid-column-start: 1;
+  }
+}
+
+.progress {
+  background-color: get-theme-variable(primary);
+  border-radius: 1em;
+  padding: 1em;
+  height: 50%;
+}
+
+.hide {
+  display: none;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.sort {
+  display: flex;
+
+  &:hover {
+    cursor: pointer;
+
+    .hidden {
+      visibility: visible;
+      filter: grayscale(80%);
+    }
+  }
+}
+
+
+

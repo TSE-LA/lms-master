@@ -1,0 +1,93 @@
+@use "libs/shared/src/lib/theme/styles/theme" as *;
+
+.answer {
+  display: inline-flex;
+  align-items: center;
+  width: 100%;
+  height: 36px;
+  margin-bottom: 16px;
+}
+
+.answer-input-area {
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  width: 100%;
+  margin-right: 10px;
+  border: get-theme-variable(input-border-radius) solid get-theme-variable(outline-color);
+  border-radius: 0 get-theme-variable(border-radius-5) get-theme-variable(border-radius-5) 0;
+  border-left: none;
+}
+
+.answer-input {
+  width: 100%;
+  position: relative;
+  top: 9px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.drag-indicator {
+  button {
+    cursor: grab !important;
+  }
+}
+
+.drag-over {
+  border: 2px dashed get-theme-variable(primary);
+  border-radius: get-theme-variable(border-radius-5);
+}
+
+.trash-can {
+  width: 44px;
+}
+
+.answer-add-btn {
+  margin-right: 14px;
+}
+
+.answer-action-button {
+  display: flex;
+  place-content: center;
+  height: 36px;
+  width: 41px;
+  align-items: center;
+  border: get-theme-variable(input-border-radius) solid get-theme-variable(outline-color);
+  border-radius: get-theme-variable(border-radius-5) 0 0 get-theme-variable(border-radius-5);
+}
+
+.question-disabled {
+  border-radius: get-theme-variable(border-radius-5);
+  border-left: get-theme-variable(input-border-radius) solid get-theme-variable(outline-color);
+  border-right: get-theme-variable(input-border-radius) solid get-theme-variable(outline-color);
+  background-color: get-theme-variable(disabled-color);
+}
+
+.answer-disabled {
+  background-color: get-theme-variable(disabled-color);
+}
+
+.answer-weight {
+  margin-right: 10px;
+  width: 100px;
+}
+
+.reserve-space {
+  margin-right: 54px;
+}
+
+.shimmer {
+  height: 30px;
+  margin-top: 10px;
+  width: 100%;
+  @include shimmer(11s);
+}
+
+.total-score {
+  width: 100px;
+}
+
+
+.error-label{
+  margin-top: 30px;
+}

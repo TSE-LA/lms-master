@@ -1,0 +1,3 @@
+dependencies {
+  compile 'mn.erin.common:erin-common-spring:1.0.2'
+}

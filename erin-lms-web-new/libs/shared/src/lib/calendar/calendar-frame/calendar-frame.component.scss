@@ -1,0 +1,76 @@
+@use "../../theme/styles/theme" as *;
+@use "../../theme/styles/layout/breakpoints" as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Roboto, sans-serif;
+}
+
+.calendar-wrapper {
+  width: 98%;
+  height: 88%;
+  margin-left: auto;
+  margin-right: auto;
+  border-right-color: transparent;
+}
+
+.weekdays {
+  width: 100%;
+  height: 6%;
+  display: grid;
+  grid-template-columns: repeat(7, auto);
+  background-color: get-theme-variable(calendar-header-background);
+  align-items: center;
+}
+
+.weekdays div {
+  font-size: 15px;
+  font-weight: 550;
+  letter-spacing: 0.1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.days {
+  width: 100%;
+  height: 94%;
+  display: grid;
+  flex-wrap: wrap;
+  grid-template-columns: repeat(7, 14.28%);
+  grid-template-rows: repeat(6, 16.66%);
+}
+
+.day {
+  display: grid;
+  grid-template-rows: 15% 85%;
+  grid-row-gap: 3px;
+  max-height: 125px;
+  font-size: get-theme-variable(calendar-node-font-size);
+  border: 1px solid get-theme-variable(calendar-border-color);
+  transition: background-color 0.2s;
+  position: relative;
+  padding-bottom: 5px;
+  @include media-breakpoint-down(media_sm) {
+    grid-template-rows: 30% 70%;
+  }
+}
+
+.day:hover:not(.today) {
+  background-color: get-theme-variable(calendar-node-hover-background);
+  cursor: pointer;
+}
+
+.today {
+  background-color: get-theme-variable(calendar-node-hover-background);
+  color: get-theme-variable(secondary);
+  border: 1px solid get-theme-variable(calendar-today-node-border-color);
+
+  &:hover {
+    color: get-theme-variable(primary);
+  }
+}
+
+

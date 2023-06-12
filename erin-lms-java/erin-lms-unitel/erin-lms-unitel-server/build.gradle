@@ -1,0 +1,26 @@
+apply plugin: 'war'
+
+dependencies {
+  compile project(':erin-aim-spring')
+  compile project(':erin-aim-repository-ldap')
+
+  compile project(':erin-lms-base-dms')
+  compile project(':erin-lms-base-shiro')
+  compile project(':erin-lms-base-analytics')
+
+  compile project(':erin-lms-unitel-rest')
+  compile project(':erin-lms-unitel-notification')
+  compile project(':erin-lms-unitel-mongo')
+
+  // Legacy infrastructure
+  compile project(':legacy-infrastructure')
+
+  compile 'mn.erin.common:erin-swagger-ui:1.0.0'
+  compile 'mn.erin.dms:erin-alfresco-connector:1.1.0'
+
+  compile lib.spring.mvc
+  compile lib.commons.fileupload
+  compile lib.hibernate.validator
+
+  compileOnly lib.javax.servlet
+}

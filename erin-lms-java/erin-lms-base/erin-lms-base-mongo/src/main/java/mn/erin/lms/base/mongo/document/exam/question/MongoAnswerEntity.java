@@ -1,0 +1,88 @@
+package mn.erin.lms.base.mongo.document.exam.question;
+
+/**
+ * @author Temuulen Naranbold
+ */
+public class MongoAnswerEntity
+{
+  private String value;
+  private int index;
+  private int matchIndex;
+  private int column;
+  private boolean correct;
+  private int weight;
+
+  public MongoAnswerEntity()
+  {
+  }
+
+  public MongoAnswerEntity(String value, int index, int matchIndex, int column, boolean correct, int weight)
+  {
+    this.value = value;
+    this.index = index;
+    this.matchIndex = matchIndex;
+    this.column = column;
+    this.correct = correct;
+    this.weight = weight;
+  }
+
+  public String getValue()
+  {
+    return value;
+  }
+
+  public void setValue(String value)
+  {
+    this.value = value;
+  }
+
+  public int getIndex()
+  {
+    return index;
+  }
+
+  public void setIndex(int index)
+  {
+    this.index = index;
+  }
+
+  public int getMatchIndex()
+  {
+    return matchIndex;
+  }
+
+  public void setMatchIndex(int matchIndex)
+  {
+    this.matchIndex = matchIndex;
+  }
+
+  public int getColumn()
+  {
+    return column;
+  }
+
+  public void setColumn(int column)
+  {
+    this.column = column;
+  }
+
+  public boolean isCorrect()
+  {
+    return correct;
+  }
+
+  public void setCorrect(boolean correct)
+  {
+    this.correct = correct;
+  }
+
+  public int getWeight()
+  {
+    return weight;
+  }
+
+  public void setWeight(int weight)
+  {
+    this.weight = weight;
+  }
+}

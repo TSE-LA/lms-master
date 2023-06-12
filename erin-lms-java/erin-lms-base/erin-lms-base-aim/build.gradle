@@ -1,0 +1,6 @@
+dependencies {
+  compile project(':erin-aim-domain')
+  compile project(':erin-aim-repository-ldap')
+
+  compile lib.json.org
+}

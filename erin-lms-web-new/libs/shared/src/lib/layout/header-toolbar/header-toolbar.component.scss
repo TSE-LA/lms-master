@@ -1,0 +1,95 @@
+@use "libs/shared/src/lib/theme/styles/theme" as *;
+
+@mixin boxShadow() {
+  box-shadow: 1px 1px 3px 1px get-theme-variable(dropdown-box-shadow-color);
+}
+
+.header {
+  position: relative;
+  z-index: 9;
+}
+
+.header {
+  @include boxShadow;
+  height: get-theme-variable(app-header-height);
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: get-theme-variable(text-color-dark);
+  background-color: get-theme-variable(app-frame-header-background-color);
+}
+
+.account-image {
+  cursor: default;
+  margin-right: 20px;
+}
+
+.spacer {
+  flex-grow: 1;
+}
+
+.company-logo {
+  :hover{
+    cursor: pointer;
+  }
+  display: grid;
+  align-items: center;
+  margin-right: 16px;
+
+  img {
+    height: 60px;
+    object-fit: contain;
+  }
+}
+
+.calendar {
+  margin-right: 10px;
+}
+
+.tablet-mode {
+  .calendar {
+    margin-right: unset;
+  }
+}
+
+.user-menu {
+  display: block;
+}
+
+.nav-toggle {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.username {
+  width: 70px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 15px;
+  color: get-theme-variable(username-color);
+}
+
+.role {
+  font-size: 13px;
+  color: get-theme-variable(role-color);
+}
+
+.hidden-menu {
+  margin-right: 20px;
+}
+
+.notification {
+  display: grid;
+  place-items: center;
+  font-size: 12px;
+  color: get-theme-variable(notification-text-color);;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-color: get-theme-variable(primary);
+  margin-left: -15px;
+  margin-top: -15px;
+}
+

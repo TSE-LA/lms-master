@@ -1,0 +1,23 @@
+.calendar-container {
+  display: flex;
+  height: 100%;
+}
+.calendar-frames {
+  background: white;
+  margin-right: 5px;
+  width: 65vw;
+}
+.date-picker-style {
+  padding: 10px 10px 0;
+}
+.margin-x-5 {
+  margin: 0 5px;
+}
+.margin-x-10 {
+  margin: 0 10px;
+}
+.text-header-style {
+  line-height: 2;
+  margin: 0 20px;
+  display: flex;
+}

@@ -1,0 +1,152 @@
+@use "../theme/styles/theme" as *;
+
+.certificate {
+  width: 285px;
+  height: auto;
+  background: get-theme-variable(background-color-primary);
+  box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.3);
+}
+
+.certificate-image {
+  width: 100%;
+  height: 175px;
+
+  & > img {
+    width: 100%;
+    height: 100%;
+    object-position: center;
+    object-fit: fill;
+  }
+}
+
+.certificate-footer {
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+  padding: 8px 10px;
+  display: flex;
+}
+
+.certificate-footer__left {
+  width: 70%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.certificate-name {
+  font-size: 16px;
+  color: get-theme-variable(text-color-primary);
+  margin: 0;
+  padding: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+
+}
+
+.certificate-author {
+  margin-top: 3px;
+  font-size: 13px;
+  color: get-theme-variable(text-color-secondary);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+
+}
+
+.certificate-footer__right {
+  width: 30%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.certificate-created-date {
+  font-size: 13px;
+  color: get-theme-variable(text-color-secondary);
+  margin: 0;
+  text-align: right;
+  padding: 0;
+  margin-bottom: 3px;
+}
+
+.certificate-status {
+  background: get-theme-variable(primary);
+  padding: 7px 5px;
+  border-radius: 5px;
+  display: grid;
+  place-items: center;
+
+  span {
+    font-size: 14px;
+    text-align: center;
+    color: get-theme-variable(text-color-light)
+  }
+}
+
+.certificate-actions {
+  display: flex;
+  margin-top: 5px;
+  justify-content: flex-start;
+
+  & > * {
+    padding: 0;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    &:first-child {
+      margin: 0;
+    }
+  }
+}
+
+.un-used {
+  background: get-theme-variable(disabled-color);
+  span{
+    color: get-theme-variable(text-color-dark);
+
+  }
+}
+
+.certificate-loader{
+  padding: 10px;
+  box-sizing: border-box;
+
+}
+.certificate-loader div {
+  animation: glow 2s ease-in-out infinite;
+  background: get-theme-variable(background-glow-color);
+  overflow: hidden;
+  color: transparent;
+  cursor: progress;
+  display: inline-block;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  &::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    @include shimmer(11s);
+    content: '';
+  }
+}
+
+.regular{
+  width: 100%;
+  height: 13px;
+}
+.smaller{
+  width: 50%;
+  height: 13px;
+
+}

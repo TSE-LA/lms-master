@@ -1,0 +1,172 @@
+version: "2"
+
+services:
+  alfresco:
+    image: alfresco/alfresco-content-repository-community:6.1.2-ga
+    mem_limit: 1500m
+    depends_on:
+      - postgres
+    environment:
+      JAVA_OPTS: "
+                -Ddb.driver=org.postgresql.Driver
+                -Ddb.username=alfresco
+                -Ddb.password=alfresco
+                -Ddb.url=jdbc:postgresql://postgres:5432/alfresco
+                -Dsolr.host=solr6
+                -Dsolr.port=8983
+                -Dsolr.secureComms=none
+                -Dsolr.base.url=/solr
+                -Dindex.subsystem.name=solr6
+                -Dshare.host=${PUBLIC_PROTO}://${PUBLIC_HOST}
+                -Dshare.port=${REPO_PORT}
+                -Dalfresco.host=${PUBLIC_PROTO}://${PUBLIC_HOST}
+                -Dalfresco.port=${REPO_PORT}
+                -Daos.baseUrlOverwrite=${PUBLIC_PROTO}://${PUBLIC_HOST}:${REPO_PORT}/alfresco/aos
+                -Dmessaging.broker.url=\"failover:(nio://activemq:61616)?timeout=3000&jms.useCompression=true\"
+                -Ddeployment.method=DOCKER_COMPOSE
+                -Dsystem.serverMode=TEST
+                -Dlocal.transform.service.enabled=true
+                -DlocalTransform.pdfrenderer.url=http://alfresco-pdf-renderer:8090/
+                -DlocalTransform.imagemagick.url=http://imagemagick:8090/
+                -DlocalTransform.libreoffice.url=http://libreoffice:8090/
+                -DlocalTransform.tika.url=http://tika:8090/
+                -DlocalTransform.misc.url=http://transform-misc:8090/
+                -Dlegacy.transform.service.enabled=true
+                -Dalfresco-pdf-renderer.url=http://alfresco-pdf-renderer:8090/
+                -Djodconverter.url=http://libreoffice:8090/
+                -Dimg.url=http://imagemagick:8090/
+                -Dtika.url=http://tika:8090/
+                -Dtransform.misc.url=http://transform-misc:8090/
+                -Dcsrf.filter.enabled=false
+                -Xms1500m -Xmx1500m
+                "
+    volumes:
+      - ./data/alf_data:/usr/local/tomcat/alf_data
+    ports:
+      - 8080:${REPO_PORT}
+    restart: unless-stopped
+
+  alfresco-pdf-renderer:
+    image: alfresco/alfresco-pdf-renderer:2.1.1
+    mem_limit: 1g
+    environment:
+      JAVA_OPTS: " -Xms256m -Xmx512m"
+    ports:
+      - 8090:8090
+    restart: unless-stopped
+
+  imagemagick:
+    image: alfresco/alfresco-imagemagick:2.1.1
+    mem_limit: 1g
+    environment:
+      JAVA_OPTS: " -Xms256m -Xmx512m"
+    ports:
+      - 8091:8090
+    restart: unless-stopped
+
+  libreoffice:
+    image: alfresco/alfresco-libreoffice:2.1.1
+    mem_limit: 1g
+    environment:
+      JAVA_OPTS: " -Xms256m -Xmx512m"
+    ports:
+      - 8092:8090
+    restart: unless-stopped
+
+  tika:
+    image: alfresco/alfresco-tika:2.1.1
+    mem_limit: 1g
+    environment:
+      JAVA_OPTS: " -Xms256m -Xmx512m"
+    ports:
+      - 8093:8090
+    restart: unless-stopped
+
+  transform-misc:
+    image: alfresco/alfresco-transform-misc:2.1.1
+    mem_limit: 1g
+    environment:
+      JAVA_OPTS: " -Xms256m -Xmx512m"
+    ports:
+      - 8094:8090
+    restart: unless-stopped
+
+  share:
+    image: alfresco/alfresco-share:6.1.0-RC3
+    mem_limit: 1g
+    environment:
+      REPO_HOST: ${REPO_ID}
+      REPO_PORT: ${REPO_PORT}
+      JAVA_OPTS: "
+                -Xms500m
+                -Xmx500m
+                -Dalfresco.host=${REPO_ID}
+                -Dalfresco.port=${REPO_PORT}
+                -Dalfresco.context=${REPO_ID}
+                -Dalfresco.protocol=http
+                "
+    ports:
+      - 8180:${REPO_PORT}
+    restart: unless-stopped
+
+  postgres:
+    image: postgres:11.4
+    mem_limit: 512m
+    environment:
+      - POSTGRES_PASSWORD=alfresco
+      - POSTGRES_USER=alfresco
+      - POSTGRES_DB=alfresco
+    command: postgres -c max_connections=300 -c log_min_messages=LOG
+    ports:
+      - 5432:5432
+    volumes:
+      # - ./data/postgres_data:/var/lib/postgresql/data # it's only linux server.
+      - postgres_data:/var/lib/postgresql/data # It's only windows server. And If you run on linux server, you should be comment this line.
+    restart: unless-stopped
+
+  solr6:
+    image: alfresco/alfresco-search-services:1.4.0
+    mem_limit: 2g
+    depends_on:
+      - alfresco
+    environment:
+      #Solr needs to know how to register itself with Alfresco
+      - SOLR_ALFRESCO_HOST=${REPO_ID}
+      - SOLR_ALFRESCO_PORT=${REPO_PORT}
+      #Alfresco needs to know how to call solr
+      - SOLR_SOLR_HOST=solr6
+      - SOLR_SOLR_PORT=8983
+      #Create the default alfresco and archive cores
+      - SOLR_CREATE_ALFRESCO_DEFAULTS=alfresco,archive
+      #HTTP by default
+      - ALFRESCO_SECURE_COMMS=none
+      - "SOLR_JAVA_MEM=-Xms1g -Xmx1g"
+    volumes:
+      #- ./data/ass_data:/opt/alfresco-search-services/data # it's only linux server. And If you run on linux server, you should be uncomment this line.
+      - ass_data:/opt/alfresco-search-services/data # It's only windows server.
+      - ass_home:/opt/alfresco-search-services/solrhome
+    ports:
+      - 8083:8983 #Browser port
+    restart: unless-stopped
+
+  activemq:
+    image: alfresco/alfresco-activemq:5.15.8
+    mem_limit: 1g
+    volumes:
+      - amq_log:/var/log/activemq
+      - amq_data:/opt/activemq/data
+      - amq_conf:/opt/activemq/conf
+    ports:
+      - 8161:8161 # Web Console
+      - 5672:5672 # AMQP
+      - 61616:61616 # OpenWire
+      - 61613:61613 # STOMP
+    restart: unless-stopped
+
+volumes:
+  postgres_data: # It's only windows server
+  ass_data: # It's only windows server
+  ass_home:
+  amq_log:
+  amq_data:
+  amq_conf:

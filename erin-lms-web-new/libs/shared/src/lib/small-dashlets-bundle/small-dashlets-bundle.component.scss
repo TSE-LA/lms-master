@@ -1,0 +1,17 @@
+@use "libs/shared/src/lib/theme/styles/theme" as *;
+@use "libs/shared/src/lib/theme/styles/layout/breakpoints" as *;
+
+.small-dashlets {
+  width: 100%;
+  display: grid;
+  grid-column-gap: 30px;
+  @include media-breakpoint-down(media_lg) {
+    grid-column-gap: 20px;
+  }
+  @include media-breakpoint-down(media_md) {
+    grid-column-gap: 10px;
+  }
+  @include media-breakpoint-down(media_sm) {
+    grid-column-gap: 5px;
+  }
+}

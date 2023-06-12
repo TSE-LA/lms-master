@@ -1,0 +1,15 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 5px;
+}
+
+.legend {
+  display: flex;
+}
+
+.prefix {
+  height: 15px;
+  width: 15px;
+  margin-right: 5px;
+}

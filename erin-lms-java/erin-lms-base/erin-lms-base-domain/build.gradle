@@ -1,0 +1,13 @@
+dependencies {
+    compile project(':erin-lms-base-aim')
+    compile lib.erin.domain_base
+    compile lib.erin.common
+    compile lib.javax.inject
+    compile lib.jackson.databind
+    compile lib.springBoot.rest
+    compile lib.springBoot.web
+    compile lib.springBoot.core
+    compile lib.springBoot.db
+    compile lib.springBoot.core
+    compileOnly lib.erin.dms_alfresco
+}

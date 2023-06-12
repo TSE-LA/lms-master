@@ -1,0 +1,28 @@
+@use "../../../../../../shared/src/lib/theme/styles/layout/breakpoints" as *;
+@use "../../../../../../shared/src/lib/theme/styles/theme" as *;
+.background-image {
+  background-color: get-theme-variable(login-background-color);
+  display: flex;
+  width: 55%;
+  height: 100vh;
+  float: left;
+  background-repeat: no-repeat;
+  background-size: cover;
+  @include media-breakpoint-down(media_md){
+    transition: ease all .5s;
+    display: none;
+  }
+}
+
+.login-container {
+  width: 100%;
+  top: 0;
+}
+
+.footer {
+  position: absolute;
+  color: #838296;
+  font-family: Arial, serif;
+  font-size: 13px;
+  bottom: 15px;
+}

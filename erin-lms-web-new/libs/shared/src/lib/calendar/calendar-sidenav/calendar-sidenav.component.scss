@@ -1,0 +1,117 @@
+@use "../../theme/styles/theme" as *;
+@use "../../theme/styles/layout/breakpoints" as *;
+
+.mat-drawer-container {
+  z-index: 10;
+  transform: matrix(1, 0, 0, 1, 0, 0);
+}
+.mat-drawer {
+  right: 0;
+}
+.close {
+  padding: 5px 0 8px 0;
+  text-align: end;
+}
+.drawer {
+  position: fixed;
+  height: 100vh;
+  min-width: 25%;
+  width: 430px;
+  border-left: 1px solid #ccc;
+}
+.drawer .contents {
+  padding: 16px;
+}
+
+.main {
+  background-color: #fff;
+}
+
+.header {
+  display: flex;
+}
+
+.drawer {
+  padding: 0 20px;
+}
+
+.state {
+  width: 8px;
+  height: 50px;
+  background: #0DC361;
+  margin-right: 10px;
+  border-radius: 2px;
+}
+
+.capitalize-text {
+  text-transform: lowercase;
+  &::first-letter {
+    text-transform: uppercase !important;
+  }
+}
+
+.mb-10 {
+  margin-bottom: 10px;
+}
+
+.mt-10 {
+  margin-top: 10px;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.mt-30 {
+  margin-top: 30px;
+}
+
+.mr-10 {
+  margin-right: 10px;
+}
+
+.course-color {
+  width: 13px;
+  height: 13px;
+  border-radius: 6px;
+  margin: 4px 10px;
+  box-shadow: 1px 1px 2px 0 #b0b0b0;
+}
+
+.icon {
+  color: #838296;
+  font-size: 25px;
+  margin-right: 8px;
+}
+
+.lh-1 {
+  line-height: 1.5;
+  color: get-theme-variable(text-color-primary)
+}
+
+.label {
+  color: #838296;
+  font-size: 14px;
+}
+
+.link {
+  color: #2584FF;
+  font-size: 13px;
+  text-decoration: underline;
+}
+
+.btn-style {
+  display: flex;
+  padding-top: 100px;
+  justify-content: center;
+}
+
+.overlay-style {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.2);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9;
+}

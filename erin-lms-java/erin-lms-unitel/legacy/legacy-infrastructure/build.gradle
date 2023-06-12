@@ -1,0 +1,14 @@
+dependencies {
+  compile project(':legacy-domain')
+  compile project(':erin-lms-base-mongo')
+  compile project(':erin-lms-base-notification')
+  compile lib.erin.common
+  compile 'mn.erin.dms:erin-alfresco-connector:1.1.0'
+  compile 'mn.erin.common:erin-common-rest:1.0.0'
+  compile 'mn.erin.dms:erin-dms-domain:1.1.0'
+
+  compile lib.javax.servlet
+  compile lib.shiro.web
+  compile lib.shiro.spring
+  testCompile lib.spring.test
+}

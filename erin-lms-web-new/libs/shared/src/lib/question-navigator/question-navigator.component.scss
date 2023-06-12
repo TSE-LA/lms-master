@@ -1,0 +1,76 @@
+@use "../theme/styles/theme" as *;
+
+.navigator {
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  margin-top: 15px;
+  border: 1px solid get-theme-variable(light);
+  height: 35px;
+  border-radius: 5px;
+  background-color: get-theme-variable(background-color-primary);
+}
+
+.counter {
+  display: grid;
+  place-items: center;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+  background-color: get-theme-variable(primary);
+  color: get-theme-variable(text-color-light);
+}
+
+.question-swiper {
+  display: grid;
+  grid-template-columns: 40px 1fr 40px;
+}
+
+.questions {
+  display: inline-flex;
+  gap: 5px;
+  overflow-x: auto;
+  padding-left: 5px;
+}
+
+.swipe-left, .swipe-right {
+  align-self: center;
+}
+
+.swipe-left {
+  border-right: 1px solid get-theme-variable(light);
+}
+
+.swipe-right {
+  border-left: 1px solid get-theme-variable(light);
+}
+
+.question {
+  display: grid;
+  place-items: center;
+  min-width: calc(100% / 20);
+  background-color: get-theme-variable(calendar-node-hover-background);
+  margin: 5px 0;
+  user-select: none;
+  border-radius: 2px;
+}
+
+.selected {
+  filter: brightness(80%);
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+::-webkit-scrollbar-track {
+  background: get-theme-variable(scrollbar-track-background-color);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: get-theme-variable(border-radius-5);
+  background: get-theme-variable(scrollbar-thumb-primary-background-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: get-theme-variable(scrollbar-thumb-background-color-hover);
+}

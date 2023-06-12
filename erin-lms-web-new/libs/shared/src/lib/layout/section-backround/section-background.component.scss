@@ -1,0 +1,38 @@
+@use "libs/shared/src/lib/theme/styles/theme" as *;
+
+.section-background {
+  box-shadow: 0 1px 3px 1px get-theme-variable(navigation-shadow-color);
+  margin-bottom: 16px;
+}
+
+.section-background-secondary {
+  padding: 15px 15px 0 15px;
+  box-shadow: 0 1px 3px 1px get-theme-variable(navigation-shadow-color);
+  margin-bottom: 16px;
+}
+
+.padding{
+  padding: 15px 15px 40px 15px;
+}
+
+.primary {
+  background: get-theme-variable(calendar-background-color);
+}
+
+.secondary {
+  background: get-theme-variable(background-color-secondary);
+}
+
+.transparent {
+  box-shadow: none;
+  background-color: transparent !important;
+}
+
+.overflow {
+  overflow-y: auto;
+}
+
+.outline {
+  background-color: transparent !important;
+  border: get-theme-variable(input-border-radius) solid get-theme-variable(outline-color);
+}

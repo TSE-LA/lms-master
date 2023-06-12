@@ -1,0 +1,5 @@
+dependencies {
+  compile project(':erin-lms-base-mongo')
+
+  testCompile lib.spring.test
+}

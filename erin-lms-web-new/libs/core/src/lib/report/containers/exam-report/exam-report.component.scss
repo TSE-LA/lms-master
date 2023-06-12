@@ -1,0 +1,152 @@
+@use "libs/shared/src/lib/theme/styles/theme" as *;
+@use "libs/shared/src/lib/theme/styles/layout/breakpoints" as *;
+
+.dropdowns-field {
+  display: inline-flex;
+  width: 100%;
+  justify-content: flex-end;
+  margin-bottom: 13px;
+  @include media-breakpoint-down(media_lg) {
+    justify-content: unset;
+  }
+}
+
+.margin-right {
+  margin-right: 10px;
+}
+
+.sort {
+  display: flex;
+
+  &:hover {
+    cursor: pointer;
+
+    .hidden {
+      visibility: visible;
+      filter: grayscale(80%);
+    }
+  }
+}
+
+.icon {
+  margin-left: 5px;
+  place-self: center;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.dropdown {
+  align-self: center;
+}
+
+.column-names, .table-row, .column-filters {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-column-gap: 5px;
+}
+
+.column-filter {
+  place-items: center;
+  width: 90%;
+  margin: 5px 0;
+  padding: 0 7px;
+}
+
+.column-names, .column-filters {
+  align-items: center;
+}
+
+.column-names {
+  border-bottom: 0.5px solid get-theme-variable(table-line);
+  color: get-theme-variable(text-color-primary);
+  font-size: get-theme-variable(table-header-font-size);
+  font-weight: bold;
+  background-color: get-theme-variable(calendar-header-background);
+  padding-left: 15px;
+  height: 65px;
+
+  &:first-child {
+    justify-content: center;
+  }
+}
+
+.table-row {
+  align-content: center;
+  cursor: pointer;
+  padding: 6px 0;
+  border-bottom: 1px solid get-theme-variable(outline-color);
+
+  div {
+    padding: 5px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    display: block;
+    text-align: center;
+    font-size: 14px;
+  }
+}
+
+.table-row:hover {
+  background-color: get-theme-variable(navigation-item-hover-baclground);
+}
+
+.table-column {
+  color: get-theme-variable(table-text-color);
+  display: grid;
+  place-items: start;
+}
+
+.table {
+  display: grid;
+  grid-row-gap: 2px;
+}
+
+.course-category {
+  display: grid;
+  grid-template-columns: 30px calc(100% - 30px);
+}
+
+.paginator {
+  justify-content: flex-end;
+  margin-right: 15px;
+  display: flex;
+  margin-top: 40px;
+}
+
+.loading {
+  .table-column {
+    color: transparent;
+  }
+
+  .column-names, .table, .column-filters {
+    font-size: 0;
+    @include shimmer(5s);
+  }
+
+}
+
+#statistics-filter {
+  display: none;
+}
+
+#statistics {
+  padding: 0 !important;
+  justify-self: center;
+}
+
+.progress {
+  padding: 0 !important;
+  border-radius: 5px;
+  height: 86%;
+}
+
+.hide {
+  display: none;
+}
+
+.min-height {
+  min-height: 35vh;
+}

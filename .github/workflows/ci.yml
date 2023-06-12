@@ -1,0 +1,30 @@
+name: CI
+on:
+  pull_request:
+    branches:
+      - master
+jobs:
+  continuous-integration:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+      - name: Set up JDK 11
+        uses: actions/setup-java@v2
+        with:
+          java-version: 11
+          distribution: 'adopt'
+          cache: gradle
+      - name: Setup MongoDB
+        uses: supercharge/mongodb-github-action@1.8.0
+        with:
+          mongodb-version: 5.0.5
+          mongodb-replica-set: rs0
+          mongodb-port: 27017
+      - name: Setup Gradle
+        uses: gradle/gradle-build-action@v2
+      - name: LMS Server Build
+        run: ./gradlew :erin-lms-jarvis-server:clean :erin-lms-jarvis-server:build --no-daemon
+      - name: LMS Jarvis Web Build
+        run: ./gradlew jarvisProdWar

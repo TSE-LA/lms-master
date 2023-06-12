@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>SCORM Wrapper</title>
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="swiper.min.css">
+  <link rel="stylesheet" href="video-js.css">
+  <link rel="stylesheet" href="loading-bar.min.css">
+  <link rel="stylesheet" href="style.css">
+
+  <script type="text/javascript" src="wrapper.js"></script>
+  <script type="text/javascript" src="loading-bar.min.js"></script>
+</head>
+<body>
+
+<div id="loader">
+  <div
+    id="ld"
+    class="ldBar label-center bar"
+    data-type="fill"
+    data-img="fill-load-logo.svg"
+    data-value="0"
+  ></div>
+</div>
+<div id="fullscreen-container">
+  <div id="fullscreen-button"><i id="icon" class="material-icons hvr-shutter-out-vertical">
+    fullscreen
+  </i></div>
+</div>
+
+<div class="swiper-container">
+  <div class="swiper-wrapper">
+    <!--    Slides go in here-->
+  </div>
+  <div class="swiper-pagination pagination"></div>
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+</div>
+
+<script src="swiper.min.js"></script>
+<script type="text/javascript" src="video.js"></script>
+<script>
+  const elem = document.documentElement;
+
+  const fullscreen = document.getElementById('fullscreen-container');
+  fullscreen.addEventListener('click', () => {
+    const icon = document.getElementById('icon');
+
+    if (icon.innerText === 'fullscreen') {
+      openFullscreen();
+    } else {
+      closeFullscreen();
+    }
+  });
+
+
+  /* View in fullscreen */
+  function openFullscreen() {
+    if (elem.requestFullscreen) {
+      elem.requestFullscreen();
+    } else if (elem.mozRequestFullScreen) { /* Firefox */
+      elem.mozRequestFullScreen();
+    } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+      elem.webkitRequestFullscreen();
+    } else if (elem.msRequestFullscreen) { /* IE/Edge */
+      elem.msRequestFullscreen();
+    }
+  }
+
+  /* Close fullscreen */
+  function closeFullscreen() {
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    } else if (document.mozCancelFullScreen) { /* Firefox */
+      document.mozCancelFullScreen();
+    } else if (document.webkitExitFullscreen) { /* Chrome, Safari and Opera */
+      document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) { /* IE/Edge */
+      document.msExitFullscreen();
+    }
+  }
+</script>
+</body>
+</html>

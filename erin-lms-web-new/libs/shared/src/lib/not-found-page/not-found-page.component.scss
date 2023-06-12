@@ -1,0 +1,37 @@
+@use "../theme/styles/theme" as *;
+
+.not-found-container {
+  height: fit-content;
+  align-self: center;
+}
+
+.not-found {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  vertical-align: center;
+}
+
+.large {
+  height: 50vh;
+}
+
+.medium {
+  height: 55vh;
+}
+
+.small {
+  height: 35vh;
+}
+
+.smallest {
+  height: 20vh;
+  font-size: 14px;
+  img{
+    height: 100px;
+  }
+}
+
+.not-found-text {
+  color: get-theme-variable(input-text-color);
+}

@@ -1,0 +1,37 @@
+@use "../../theme/styles/theme" as *;
+@use "../../theme/styles/layout/breakpoints" as *;
+
+.calendar-event {
+  white-space: nowrap;
+  text-align: left;
+  padding: 5px;
+  margin: 5px 5px 0 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: get-theme-variable(text-color-primary);
+  font-size: get-theme-variable(calendar-event-font-size);
+  word-break: break-all;
+  border-radius: get-theme-variable(border-radius-5);
+  height: 13px;
+  line-height: 0.8;
+  border-top: 7px solid;
+  box-shadow: 1.1px 1.1px 3.3px 0.3px #b0b0b0;
+}
+
+.mobile-version {
+  .calendar-event {
+    margin: 5px 0 0 1px;
+    color: transparent;
+    border-radius: 50%;
+    height: 3px;
+    width: 3px;
+    @include media-breakpoint-down(media_s) {
+      height: 2px;
+      width: 2px;
+    }
+  }
+}
+
+.prev, .next {
+  opacity: 0.5;
+}

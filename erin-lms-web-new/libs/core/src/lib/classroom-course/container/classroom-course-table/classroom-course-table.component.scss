@@ -1,0 +1,60 @@
+@use "../../../../../../shared/src/lib/theme/styles/theme" as *;
+@use "../../../../../../shared/src/lib/theme/styles/layout/breakpoints" as *;
+
+.loading {
+  display: none;
+}
+
+.container {
+  width: 65vw;
+  height: 100%;
+  color: get-theme-variable(calendar-node-text-color);
+  @include media-breakpoint-down(media_md) {
+    width: 90vw;
+  }
+}
+
+.main-wrapper {
+  display: grid;
+  grid-template-rows: 20% 80%;
+  position: relative;
+  background-color: get-theme-variable(calendar-background-color);
+  min-height: 80vh;
+  box-shadow: 2px 1px 2px 0 get-theme-variable(calendar-box-shadow);
+  @include media-breakpoint-down(media_s) {
+    grid-template-rows: 15% 85%;
+    transition: ease-in 1s;
+  }
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 10px;
+  justify-content: flex-end;
+  place-items: flex-end;
+  align-items: center;
+  flex-direction: row;
+  late-rows: 35% 40%;
+
+  & > div {
+    display: block;
+    margin-bottom: 1em;
+    @media(min-width: 920px) {
+      width: 167px;
+    }
+  }
+
+}
+
+.margin-top {
+  margin-top: 1.1em;
+}
+.create-button {
+  padding: 10px 13px 0 0;
+
+  .margin-x-5 {
+    margin: 0 5px;
+  }
+}

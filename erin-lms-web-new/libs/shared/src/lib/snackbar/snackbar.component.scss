@@ -1,0 +1,43 @@
+@use '../theme/styles/theme' as *;
+
+.snackbar {
+  width: var(--notification-size);
+  background-color: get-theme-variable(snackbar-background-color);
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  justify-content: space-between;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px 2px get-theme-variable(dropdown-box-shadow-color);
+  position: fixed;
+  top: 25px;
+  left: 50%;
+  transition: all 0.2s ease-in-out;
+  transform: translateX(-50%);
+  z-index: 200;
+}
+
+.snackbar-text {
+  display: flex;
+  align-items: center;
+  width: 80%;
+  font-size: 13.5px;
+  word-break: break-word;
+}
+
+.snackbar-close-button {
+  text-align: right;
+}
+
+.snackbar-status-icon {
+  display: grid;
+  place-items: center;
+}
+
+.medium {
+  width: 400px;
+}
+
+.long {
+  width: 100%;
+}

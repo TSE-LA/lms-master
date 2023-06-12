@@ -1,0 +1,58 @@
+{
+  "npmScope": "erin-lms-web-new",
+  "affected": {
+    "defaultBase": "master"
+  },
+  "implicitDependencies": {
+    "angular.json": "*",
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
+    "tsconfig.base.json": "*",
+    "tslint.json": "*",
+    ".eslintrc.json": "*",
+    "nx.json": "*"
+  },
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "@nrwl/workspace/tasks-runners/default",
+      "options": {
+        "cacheableOperations": ["build", "lint", "build-storybook"]
+      }
+    }
+  },
+  "projects": {
+    "authentication": {
+      "tags": []
+    },
+    "core": {
+      "tags": []
+    },
+    "jarvis": {
+      "tags": []
+    },
+    "jarvis-e2e": {
+      "tags": [],
+      "implicitDependencies": ["jarvis"]
+    },
+    "shared": {
+      "tags": []
+    },
+    "unitel": {
+      "tags": []
+    },
+    "unitel-e2e": {
+      "tags": [],
+      "implicitDependencies": ["unitel"]
+    }
+  },
+  "targetDependencies": {
+    "build": [
+      {
+        "target": "build",
+        "projects": "dependencies"
+      }
+    ]
+  }
+}

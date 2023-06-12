@@ -1,0 +1,30 @@
+name: Release Jarvis
+on:
+  workflow_dispatch:
+    inputs:
+      versionNumber:
+        required: true
+        description: 'The version number of Jarvis (The version format is like 1.0.0)'
+jobs:
+  continuous-deploy-to-test-lms:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Publish with SSH
+        uses: appleboy/ssh-action@v0.1.8
+        env:
+          VERSION: ${{ github.event.inputs.versionNumber }}
+        with:
+          host: ${{ secrets.TEST_SERVER_HOST }}
+          username: ${{ secrets.TEST_SERVER_USERNAME }}
+          password: ${{ secrets.TEST_SERVER_PASSWORD }}
+          port: ${{ secrets.SERVER_PORT }}
+          script: |
+            echo ${{ env.REGISTRY_CREDENTIAL }} | docker login ${{ env.REGISTRY_SERVER_HOST }} -u ${{ env.REGISTRY_USERNAME }} --password-stdin
+            cd jarvis
+            ./release.sh LMS ${{ env.VERSION }}
+            docker pull registry.erin.systems/erin-lms-jarvis:${{ env.VERSION }}
+            docker-compose stop lms
+            docker-compose up -d lms
+      - name: Deployed Status
+        run: echo "Test LMS Jarvis server deployed with version ${{ github.event.inputs.versionNumber }}" >> $GITHUB_STEP_SUMMARY

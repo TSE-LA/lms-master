@@ -1,0 +1,6 @@
+@use "../theme/styles/theme" as *;
+
+.divider {
+  height: 1px;
+  background-color: get-theme-variable(divider-color);
+}

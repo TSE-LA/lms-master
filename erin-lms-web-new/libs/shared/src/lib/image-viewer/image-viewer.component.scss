@@ -1,0 +1,11 @@
+@use "../theme/styles/theme" as *;
+img {
+  vertical-align: middle;
+  font-size: 0;
+}
+
+.loader{
+  width: 100%;
+  height: 30vh;
+  @include shimmer(2s)
+}

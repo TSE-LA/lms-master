@@ -1,0 +1,12 @@
+dependencies {
+  compile project(':erin-lms-base-aim')
+  compile 'mn.erin.common:erin-common-rest:1.0.0'
+
+  compileOnly lib.javax.servlet
+  compileOnly lib.javax.inject
+
+  compile lib.shiro.core
+  compile lib.shiro.web
+  compile lib.shiro.spring
+  compile lib.spring.security
+}

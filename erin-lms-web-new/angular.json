@@ -1,0 +1,459 @@
+{
+  "version": 1,
+  "projects": {
+    "authentication": {
+      "projectType": "library",
+      "root": "libs/authentication",
+      "sourceRoot": "libs/authentication/src",
+      "prefix": "jrs",
+      "architect": {
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/authentication/src/test.ts",
+            "tsConfig": "libs/authentication/tsconfig.spec.json",
+            "karmaConfig": "libs/authentication/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/authentication/src/**/*.ts",
+              "libs/authentication/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "core": {
+      "projectType": "library",
+      "root": "libs/core",
+      "sourceRoot": "libs/core/src",
+      "prefix": "jrs",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/core/src/**/*.ts",
+              "libs/core/src/**/*.html"
+            ],
+            "tsConfig": [
+              "libs/common/tsconfig.lib.json",
+              "libs/common/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/common/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/core/src/test.ts",
+            "tsConfig": "libs/core/tsconfig.spec.json",
+            "karmaConfig": "libs/core/karma.conf.js"
+          }
+        }
+      }
+    },
+    "jarvis": {
+      "projectType": "application",
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "apps/jarvis",
+      "sourceRoot": "apps/jarvis/src",
+      "prefix": "jrs",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/jarvis",
+            "index": "apps/jarvis/src/index.html",
+            "main": "apps/jarvis/src/main.ts",
+            "polyfills": "apps/jarvis/src/polyfills.ts",
+            "tsConfig": "apps/jarvis/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "apps/jarvis/src/favicon.ico",
+              "apps/jarvis/src/assets",
+              {
+                "glob": "**/*",
+                "input": "./node_modules/jodit/build",
+                "output": "./jodit_resources"
+              }
+            ],
+            "styles": ["apps/jarvis/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/jarvis/src/environments/environment.ts",
+                  "with": "apps/jarvis/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "5mb",
+                  "maximumError": "7mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "10kb",
+                  "maximumError": "20kb"
+                }
+              ]
+            },
+            "development": {
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": true,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": true,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "jarvis:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "jarvis:build:production"
+            },
+            "production-proxy": {
+              "browserTarget": "jarvis:build:production-proxy"
+            },
+            "development": {
+              "browserTarget": "jarvis:build:development"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "jarvis:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/jarvis/tsconfig.app.json",
+              "apps/jarvis/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/jarvis/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "apps/jarvis/src/test.ts",
+            "tsConfig": "apps/jarvis/tsconfig.spec.json",
+            "karmaConfig": "apps/jarvis/karma.conf.js",
+            "polyfills": "apps/jarvis/src/polyfills.ts",
+            "styles": [],
+            "scripts": [],
+            "assets": []
+          }
+        }
+      }
+    },
+    "jarvis-e2e": {
+      "root": "apps/jarvis-e2e",
+      "sourceRoot": "apps/jarvis-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/jarvis-e2e/cypress.json",
+            "devServerTarget": "jarvis:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "jarvis:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["apps/jarvis-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    },
+    "shared": {
+      "projectType": "library",
+      "root": "libs/shared",
+      "sourceRoot": "libs/shared/src",
+      "prefix": "jrs",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/src/**/*.ts",
+              "libs/shared/src/**/*.html"
+            ],
+            "tsConfig": [
+              "libs/course/tsconfig.lib.json",
+              "libs/course/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/course/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/shared/src/test.ts",
+            "tsConfig": "libs/shared/tsconfig.spec.json",
+            "karmaConfig": "libs/shared/karma.conf.js"
+          }
+        },
+        "storybook": {
+          "builder": "@nrwl/storybook:storybook",
+          "options": {
+            "uiFramework": "@storybook/angular",
+            "port": 4400,
+            "config": {
+              "configFolder": "libs/shared/.storybook"
+            }
+          },
+          "configurations": {
+            "ci": {
+              "quiet": true
+            }
+          }
+        },
+        "build-storybook": {
+          "builder": "@nrwl/storybook:build",
+          "options": {
+            "uiFramework": "@storybook/angular",
+            "outputPath": "dist/storybook/shared",
+            "config": {
+              "configFolder": "libs/shared/.storybook"
+            }
+          },
+          "configurations": {
+            "ci": {
+              "quiet": true
+            }
+          }
+        }
+      }
+    },
+    "unitel": {
+      "projectType": "application",
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "apps/unitel",
+      "sourceRoot": "apps/unitel/src",
+      "prefix": "jrs",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/unitel",
+            "index": "apps/unitel/src/index.html",
+            "main": "apps/unitel/src/main.ts",
+            "polyfills": "apps/unitel/src/polyfills.ts",
+            "tsConfig": "apps/unitel/tsconfig.app.json",
+            "aot": true,
+            "assets": ["apps/unitel/src/favicon.ico", "apps/unitel/src/assets"],
+            "styles": ["apps/unitel/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/unitel/src/environments/environment.ts",
+                  "with": "apps/unitel/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "5mb",
+                  "maximumError": "7mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "10kb",
+                  "maximumError": "20kb"
+                }
+              ]
+            },
+            "development": {
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": true,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": true,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "unitel:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "unitel:build:production"
+            },
+            "production-proxy": {
+              "browserTarget": "unitel:build:production-proxy"
+            },
+            "development": {
+              "browserTarget": "unitel:build:development"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "unitel:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/unitel/tsconfig.app.json",
+              "apps/unitel/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/unitel/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "apps/unitel/src/test.ts",
+            "tsConfig": "apps/unitel/tsconfig.spec.json",
+            "karmaConfig": "apps/unitel/karma.conf.js",
+            "polyfills": "apps/unitel/src/polyfills.ts",
+            "styles": [],
+            "scripts": [],
+            "assets": []
+          }
+        }
+      }
+    },
+    "unitel-e2e": {
+      "root": "apps/unitel-e2e",
+      "sourceRoot": "apps/unitel-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/unitel-e2e/cypress.json",
+            "devServerTarget": "unitel:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "unitel:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["apps/unitel-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "defaultCollection": "@nrwl/angular",
+    "analytics": false
+  },
+  "schematics": {
+    "@nrwl/angular": {
+      "application": {
+        "linter": "eslint"
+      },
+      "library": {
+        "linter": "eslint"
+      },
+      "storybook-configuration": {
+        "linter": "eslint"
+      }
+    },
+    "@nrwl/angular:application": {
+      "style": "scss",
+      "linter": "eslint",
+      "unitTestRunner": "karma",
+      "e2eTestRunner": "none"
+    },
+    "@nrwl/angular:library": {
+      "style": "scss",
+      "linter": "eslint",
+      "unitTestRunner": "karma"
+    },
+    "@nrwl/angular:component": {
+      "style": "scss"
+    }
+  }
+}

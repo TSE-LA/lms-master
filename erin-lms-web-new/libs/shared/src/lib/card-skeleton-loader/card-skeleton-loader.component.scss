@@ -1,0 +1,53 @@
+@use "../theme/styles/theme" as *;
+
+.loading-item {
+  height: 287px;
+  width: 100%;
+  background: get-theme-variable(background-color-primary);
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.glow-text{
+  width: 250px;
+  box-sizing: border-box;
+  overflow: hidden;
+  height: 100%;
+}
+.glow-text div {
+  animation: glow 2s ease-in-out infinite;
+  background: get-theme-variable(background-glow-color);
+  overflow: hidden;
+  color: transparent;
+  cursor: progress;
+  display: inline-block;
+  position: relative;
+  &::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    @include shimmer(11s);
+    content: '';
+  }
+}
+
+.regular {
+  height: 200px;
+  width: 270px;
+}
+
+.smaller {
+  margin-top: 16px;
+  height: 16px;
+  width: 270px;
+}
+
+.smallest {
+  margin-top: 16px;
+  height: 16px;
+  width: 240px;
+}

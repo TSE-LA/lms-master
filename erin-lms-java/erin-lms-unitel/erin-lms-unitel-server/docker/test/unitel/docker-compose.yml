@@ -1,0 +1,65 @@
+version: '2'
+networks:
+  lms-network:
+    driver: bridge
+
+services:
+  app:
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+    image: erin/erin-lms-unitel:latest
+    mem_limit: 4g
+    environment:
+      JAVA_OPTS: "
+        -Dldap.url=ldap://${LDAP_HOST}:${LDAP_PORT}
+        -Dldap.baseDn=OU=UN,DC=corp,DC=test,DC=uni
+        -Dldap.tenantId=${LDAP_TENANT_ID}
+        -Dldap.username=${LDAP_USERNAME}
+        -Dldap.password=${LDAP_PASSWORD}
+        -Dldap.principalSuffix=${LDAP_SUFFIX}
+        -Dadmin.resources=aim/admins,legacy/course-assessment/**,legacy/course-notifications/send-notification -Dauthority.resources=aim/group/**,legacy/lms/course-report,aim/memberships,legacy/lms/readerships/**,legacy/lms/promotion-relations/**,legacy/lms/promo-report/**,legacy/lms/promotion-statistics/**,aim/roles,aim/users,legacy/lms/employee-analytics/user-activities,aim/group-members
+        -Danon.resources=aim/login,aim/logout,lms/**
+        -Dsecure.resources=legacy/lms/employee-analytics/employee-score,legacy/lms/employee-analytics/employee-analytic-data,legacy/course-notifications
+        -Dspring.mail.host=${MAIL_HOST}
+        -Dspring.mail.port=${MAIL_PORT}
+        -Dspring.mail.username=${MAIL_USERNAME}
+        -Dspring.mail.password=${MAIL_PASSWORD}
+        -Dspring.mail.protocol=smtp
+        -Dspring.mail.smtp.starttls.enable=false
+        -Dspring.mail.smtp.auth=false
+        -Dspring.mail.smtp.ssl.enable=true
+        -Dspring.mail.debug=true
+        -Duser.timezone=Asia/Ulaanbaatar
+        -Dalfresco.username=${ALFRESCO_USERNAME}
+        -Dalfresco.password=${ALFRESCO_PASSWORD}
+        -Xms4024m -Xmx4024m
+        -Djava.rmi.server.hostname=127.0.0.1
+        "
+    ports:
+      - ${APP_PORT}:${APP_PORT}
+    networks:
+      - lms-network
+    links:
+      - mongo
+  mongo:
+    image: mongo:4.2.5
+    container_name: mongo
+    ports:
+      - 27017:27017
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - lms-network
+#  proxy:
+#    image: nginx:stable-alpine
+#    mem_limit: 512m
+#    depends_on:
+#      - app
+#    volumes:
+#      - ./proxy/nginx.conf:/etc/nginx/conf.d/default.conf
+#    ports:
+#      - 80:80
+
+volumes:
+  mongo-data:

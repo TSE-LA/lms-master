@@ -1,0 +1,27 @@
+configurations {
+  integTestImplementation.extendsFrom testImplementation
+  itegTestRuntime.extendsFrom testRuntime
+}
+
+dependencies {
+  compile project(':erin-aim-repository-mongo')
+  compile project(':erin-aim-shiro')
+
+  integTestImplementation lib.javax.servlet
+  integTestImplementation lib.spring.test
+  integTestImplementation 'mn.erin.common:erin-common-jdbc:1.0.0'
+}
+
+sourceSets {
+  integTest {
+    java.srcDir "$projectDir/src/integTest/java"
+    resources.srcDir "$projectDir/src/integTest/resources"
+    compileClasspath += main.output + test.output
+    runtimeClasspath += main.output + test.output
+  }
+}
+
+task integTest(type: Test) {
+  testClassesDirs = sourceSets.integTest.output.classesDirs
+  classpath = sourceSets.integTest.runtimeClasspath
+}

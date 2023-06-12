@@ -1,0 +1,11 @@
+username,email,password,phone,lastName,firstName,gender,jobTitle
+user1,user@mail.com,Secret123,99919122,dashnyam,bayar,female,developer
+user2,user@mail.com,Secret124,99191221,dashnyam,bayar,male,developer
+user3,user@mail.com,Secret125,99191221,dashnyam,bayar,male,developer
+user4,user@mail.com,Secret126,99191221,dashnyam,bayar,male,developer
+user5,user@mail.com,Secret123,99191221,dashnyam,bayar,male,developer
+user6,user@mail.com,Secret123,99191221,dashnyam,bayar,male,developer
+user7,user@mail.com,Secret123,99191221,dashnyam,bayar,male,developer
+user8,user@mail.com,Secret130,99191221,dashnyam,bayar,male,developer
+user9,user@mail.com,Secret131,99191221,dashnyam,bayar,male,developer
+user10,user@mail.com,Secret132,99191221,dashnyam,bayar,male,developer

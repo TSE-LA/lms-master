@@ -1,0 +1,112 @@
+/*
+ * Copyright (C) ERIN SYSTEMS LLC, 2021. All rights reserved.
+ *
+ * The source code is protected by copyright laws and international copyright treaties, as well as
+ * other intellectual property laws and treaties.
+ */
+
+buildscript {
+  repositories {
+    mavenCentral()
+  }
+  dependencies {
+    classpath 'de.thetaphi:forbiddenapis:3.1'
+  }
+}
+
+plugins {
+  id "org.sonarqube" version "3.0"
+}
+apply from: 'libs.gradle'
+apply plugin: "idea"
+
+ext {
+  if (System.getenv("TEAMCITY_VERSION")) {
+    isTeamcityRun = true
+  }
+}
+
+allprojects {
+  group = 'mn.erin.lms'
+  status = 'release'
+  version = '2.10.2'
+
+  repositories {
+
+    flatDir {
+      dirs fileTree("$rootProject.projectDir/libs")
+    }
+    mavenCentral()
+    maven {
+      url "$artifactoryContextUrl/libs-snapshot"
+      credentials {
+        username = artifactoryUser
+        password = artifactoryApiKey
+      }
+      mavenContent {
+        snapshotsOnly()
+      }
+    }
+    maven {
+      url "$artifactoryContextUrl/libs-release"
+      credentials {
+        username = artifactoryUser
+        password = artifactoryApiKey
+      }
+      mavenContent {
+        releasesOnly()
+      }
+    }
+  }
+
+  task cleanAll(type: Delete) {
+    delete 'out', 'build', 'dist', 'target'
+  }
+
+  task deleteNodeModules(type: Delete) {
+    delete 'node_modules'
+  }
+
+  configurations.all {
+    resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+  }
+}
+
+subprojects {
+  apply plugin: "java"
+  apply plugin: "de.thetaphi.forbiddenapis"
+
+  sourceCompatibility = JavaVersion.VERSION_1_8
+  targetCompatibility = JavaVersion.VERSION_1_8
+
+  compileJava.options.encoding = 'UTF-8'
+  compileTestJava.options.encoding = 'UTF-8'
+
+  dependencies {
+    compile lib.slf4j
+    runtime lib.logback_classic
+    testCompile lib.junit
+    testCompile lib.mockito
+    testRuntime lib.slf4j_simple
+  }
+
+  forbiddenApis {
+    signaturesFiles = rootProject.files('erin-lms-forbidden-apis')
+    // https://github.com/policeman-tools/forbidden-apis/wiki/BundledSignatures
+    /*bundledSignatures = ["jdk-unsafe-*", "jdk-deprecated-*", "jdk-internal-*", "jdk-non-portable", "jdk-system-out", "jdk-reflection", "commons-io-unsafe-*"]*/
+    /*ignoreFailures = false*/
+  }
+}
+
+sonarqube {
+  properties {
+    def exclusion = [
+      "build/**",
+      "dist/**",
+      "node_modules/**",
+      "out/**"
+    ]
+    property "sonar.exclusions", exclusion.join(',')
+    property "sonar.host.url", "http://47.242.175.240:9000"
+  }
+}

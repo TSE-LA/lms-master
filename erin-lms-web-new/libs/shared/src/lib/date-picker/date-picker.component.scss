@@ -1,0 +1,119 @@
+@use "../theme/styles/theme" as *;
+
+:host ::ng-deep {
+  .mat-form-field-outline-start {
+    background-color: get-theme-variable(background-color-primary) !important;
+  }
+
+  .mat-form-field-outline-gap {
+    background-color: get-theme-variable(background-color-primary) !important;;
+  }
+
+  .mat-form-field-outline-end {
+    background-color: get-theme-variable(background-color-primary) !important;
+  }
+
+  .mat-form-field-infix {
+    padding: 0 0 9px;
+  }
+
+  .mat-form-field-appearance-outline .mat-form-field-outline-thick {
+    color: get-theme-variable(outline-color);
+  }
+
+  input {
+    color: get-theme-variable(input-text-color);
+    font-size: 13px;
+  }
+
+  .mat-form-field-wrapper {
+    margin: 0 !important;
+  }
+
+  .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+    color: get-theme-variable(outline-color);
+  }
+
+  .mat-form-field-appearance-outline .mat-form-field-outline {
+    color: get-theme-variable(outline-color);
+    border: 0.5px;
+  }
+
+  mat-datepicker-toggle .mat-icon-button {
+    color: get-theme-variable(primary);
+    height: 27px !important;
+    width: 27px !important;
+  }
+
+  .mat-button-wrapper {
+    font-size: 13px;
+  }
+
+}
+
+.label-style {
+  padding: 0 5px;
+  font-size: 12px;
+  color: get-theme-variable(input-text-color);
+}
+
+.date-label-style {
+  padding: 0 5px;
+  font-size: 13px;
+  color: get-theme-variable(input-text-color);
+}
+
+.required-star-style {
+  color: get-theme-variable(error-color);
+}
+
+.wrapper {
+  display: grid;
+}
+
+.margin-top {
+  margin-top: 5px;
+}
+
+
+input {
+  color: get-theme-variable(text-color-dark);
+}
+
+.small::placeholder {
+  font-size: 12px;
+}
+
+.standard::placeholder {
+  font-size: 13px;
+}
+
+.error-style-form {
+  ::ng-deep {
+    .mat-form-field-wrapper{
+      padding-bottom: 0 !important;
+    }
+    .mat-form-field-outline{
+      color: red !important;
+    }
+    .mat-form-field-flex {
+      border-width: 0.3px;
+    }
+  }
+}
+.date-error-style {
+  position: relative;
+  justify-self: end;
+  padding: 0 8px;
+  color: get-theme-variable(error-color);
+  font-size: 12px;
+}
+
+input::placeholder {
+  color: get-theme-variable(text-color-dark);
+}
+.label-style {
+  padding: 0 5px;
+  font-size: 13px;
+  color: get-theme-variable(input-text-color);
+}

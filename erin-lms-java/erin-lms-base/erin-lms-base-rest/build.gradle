@@ -1,0 +1,11 @@
+dependencies {
+  compile project(':erin-lms-base-domain')
+  compile project(':erin-lms-base-scorm')
+  compile 'mn.erin.common:erin-common-rest:1.0.0'
+  compile lib.springBoot.rest
+  compile lib.springBoot.web
+  compile lib.springBoot.core
+  compile lib.springBoot.db
+  compile lib.springBoot.core
+  compileOnly lib.shiro.core
+}

@@ -1,0 +1,39 @@
+@use "libs/shared/src/lib/theme/styles/theme" as *;
+@use "libs/shared/src/lib/theme/styles/layout/breakpoints" as *;
+
+#scormContentFrame {
+  position: relative;
+  overflow: hidden !important;
+  border: none;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 99.9%;
+
+}
+
+.iframe-course{
+  height: 80vh;
+  @include media-breakpoint-down(media_xxl){
+    height: 68vh;
+  }
+  @include media-breakpoint-down(media_xl){
+    height: 84vh;
+  }
+  @include media-breakpoint-down(media_lg){
+    height: 67vh;
+  }
+  @include media-breakpoint-down(media_md){
+    height: 54vh;
+  }
+  @include media-breakpoint-down(media_sm){
+    height: 42vh;
+  }
+  @include media-breakpoint-down(media_s){
+    height: 32vh;
+  }
+}
+
+.iframe-full-page{
+  height: 100%;
+}

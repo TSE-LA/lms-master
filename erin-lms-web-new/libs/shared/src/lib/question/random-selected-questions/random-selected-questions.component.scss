@@ -1,0 +1,84 @@
+@use "libs/shared/src/lib/theme/styles/theme" as *;
+
+.chosen-questions {
+  background-color: get-theme-variable(question-chosen-background);
+  color: get-theme-variable(text-color-dark);
+  border-radius: 5px;
+  padding: 5px 20px;
+  margin-bottom: 10px;
+  height: 25px;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.questions-to-choose {
+  color: get-theme-variable(text-color-dark);
+  border-radius: 5px;
+  padding: 5px 20px;
+  margin-bottom: 10px;
+  height: 25px;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.question-score {
+  width: 60px;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.question-amount {
+  width: 60px;
+}
+
+.chosen-question-score{
+  width: 45px;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.question-available {
+  margin-left: 15px;
+}
+
+.delete-button{
+  width: 46px;
+}
+
+.grand-total-score {
+  background-color: get-theme-variable(question-chosen-background);
+  color: get-theme-variable(text-color-dark);
+  font-size: 12px;
+  width: fit-content;
+  border-radius: 10px;
+  padding: 2px 5px;
+}
+
+.question-group, .question-category {
+  width: 160px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.select-group {
+  margin-left: 23px;
+}
+
+#group-name {
+  width: 180px;
+  margin-left: 46px;
+  margin-bottom: 10px;
+}
+
+#category-name, #group-name, #score-name {
+  color: get-theme-variable(text-color-dark);
+}
+
+#score-name {
+  width: 250px;
+}
+
+

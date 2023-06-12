@@ -1,0 +1,75 @@
+@use "../../theme/styles/theme" as *;
+
+.filters {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px 7px;
+  background-color: get-theme-variable(background-color-secondary);
+  border-radius: get-theme-variable(border-radius-5);
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 10px;
+}
+
+.checkbox {
+  display: grid;
+  place-items: center;
+}
+
+.group-enrollment-title {
+  font-size: 14px;
+  color: get-theme-variable(text-color-secondary);
+}
+
+.group-members {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.group-member {
+  display: flex;
+  height: 40px;
+  border-bottom: 1px solid get-theme-variable(border-color);
+  border-radius: get-theme-variable(border-radius-5);
+  padding: 0 5px;
+  overflow: hidden;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: get-theme-variable(table-row-hover-color);
+  }
+
+  .username, .user-role {
+    text-align: start;
+    margin: auto 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .user-lastname, .user-firstname {
+    text-align: start;
+    margin: auto 5px;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.member-info {
+  font-size: 14px;
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-column-gap: 10px;
+  color: get-theme-variable(text-color-primary);
+}
+
+.highlight {
+  background-color: get-theme-variable(table-row-hover-color);
+}
+.group-enrollment-member-info-container{
+  overflow: -moz-hidden-unscrollable;
+}

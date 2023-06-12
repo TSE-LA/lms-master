@@ -1,0 +1,11 @@
+package mn.erin.lms.unitel.domain.model.promotion;
+
+/**
+ * @author Bat-Erdene Tsogoo.
+ */
+public enum  PromotionType
+{
+  MAIN,
+  CURRENT,
+  EXPIRED
+}

@@ -1,0 +1,10 @@
+@use "../theme/styles/theme" as *;
+
+.loader{
+  .shimmer{
+    height: 30px;
+    margin-top: 10px;
+    min-width: 100%;
+    @include shimmer(11s);
+  }
+}

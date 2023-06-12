@@ -1,0 +1,273 @@
+@use "../theme/styles/theme" as *;
+
+* {
+  box-sizing: border-box;
+}
+
+.loading {
+  .shimmer {
+    height: 35px;
+    width: 100%;
+    @include shimmer(11s);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 2000px 0;
+  }
+}
+
+%label-movement {
+  top: -7px;
+  font-size: 11px;
+  color: get-theme-variable(input-text-color);
+  background: get-theme-variable(background-color-primary);
+  margin-left: 0.5rem;
+  padding: 0 5px;
+  transition: all 0.125s cubic-bezier(0.2, 0, 0.03, 1);
+}
+
+.bottom-padding {
+  padding-bottom: 18px;
+}
+
+.no-edit {
+  cursor: default;
+}
+
+.input-field {
+  display: inline-flex;
+  align-items: center;
+  width: 100%;
+  position: relative;
+
+  label {
+    color: get-theme-variable(input-text-color);
+    padding: 0.7rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 0.25s cubic-bezier(0.2, 0, 0.03, 1);
+    pointer-events: none;
+  }
+
+  &.wide {
+    width: 100%;
+  }
+}
+
+.icon {
+  display: grid;
+  place-items: center;
+  background-color: white;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  cursor: pointer;
+}
+
+.suffix-icon {
+  margin-right: 10px;
+}
+
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.move {
+  input, textarea {
+    &:focus {
+      ~ label {
+        @extend %label-movement;
+      }
+    }
+
+    &:valid ~ label {
+      @extend %label-movement;
+    }
+
+    &:invalid ~ label {
+      @extend %label-movement;
+    }
+  }
+}
+
+input, textarea {
+  font-weight: normal;
+  color: get-theme-variable(text-color-dark);
+  display: block;
+  transition: all 0.5s ease;
+  white-space: nowrap;
+  min-height: 37px;
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid get-theme-variable(outline-color);
+  background-color: get-theme-variable(background-color-primary);
+  border-radius: 5px;
+
+  &:focus {
+    outline: 0;
+    border-color: get-theme-variable(input-text-color);
+
+    ~ label {
+      color: transparent;
+    }
+  }
+
+  &:valid {
+    ~ label {
+      color: transparent;
+    }
+  }
+
+  &:disabled {
+    cursor: unset;
+    filter: unset;
+    background-color: get-theme-variable(disabled-color);
+    color: get-theme-variable(text-color-secondary);
+    border-bottom-color: get-theme-variable(outline-color);
+  }
+
+  &:hover:enabled {
+    border-color: get-theme-variable(input-text-color);
+  }
+
+  &:hover:disabled {
+    border-color: get-theme-variable(outline-color);
+  }
+}
+
+.medium {
+  min-height: 35px;
+  padding-left: 13px;
+}
+
+.small {
+  min-height: 30px;
+  padding-left: 13px;
+}
+
+.required-star-style {
+  margin-left: -2px;
+  padding-top: 10px;
+  color: get-theme-variable(error-color);
+}
+
+.label-text-style {
+  color: get-theme-variable(input-text-color);
+  margin: 0 5px;
+  font-size: 13px;
+}
+.icon-input-config {
+  width: 100%;
+  display: flex;
+  background-color: get-theme-variable(background-color-primary);
+  border: 1px solid get-theme-variable(outline-color);
+  border-radius: 5px;
+
+  &:focus {
+    outline: 0;
+    border-color: get-theme-variable(input-text-color);
+  }
+
+  &:hover {
+    border-color: get-theme-variable(input-text-color);
+  }
+
+  jrs-icon {
+    padding-left: 5px;
+  }
+
+  input {
+    border: none;
+    border-top-left-radius: unset;
+    border-bottom-left-radius: unset;
+  }
+}
+
+.suffix-input-config {
+  display: inline-flex;
+  background-color: get-theme-variable(background-color-primary);
+  border: 1px solid get-theme-variable(outline-color);
+  border-radius: 5px;
+
+  &:focus {
+    outline: 0;
+    border-color: get-theme-variable(input-text-color);
+  }
+
+  &:hover {
+    border-color: get-theme-variable(input-text-color);
+  }
+
+  input {
+    border: none;
+  }
+}
+
+.error-label {
+  border-color: get-theme-variable(error-color) !important;
+
+  input {
+    border-color: get-theme-variable(error-color) !important;
+    background-color: transparent;
+  }
+}
+
+.label-style {
+  padding: 0 5px;
+  font-size: 13px;
+  color: get-theme-variable(input-text-color);
+}
+
+.error-style {
+  position: relative;
+  float: right;
+  padding: 0 8px;
+  color: get-theme-variable(error-color);
+  font-size: 12px;
+}
+
+.primary {
+  color: get-theme-variable(primary);
+}
+
+.secondary {
+  color: get-theme-variable(warn);
+}
+
+.light {
+  color: get-theme-variable(light);
+}
+
+.underline {
+  outline: 0;
+  border-width: 0 0 2px;
+  border-radius: unset;
+
+  &:focus {
+    filter: unset;
+    border-color: get-theme-variable(primary);
+  }
+}
+
+.no-outline {
+  outline: 0;
+  border: none;
+}
+
+.prefix {
+  position: absolute;
+  padding-left: 9px;
+  color: get-theme-variable(text-color-dark);
+}
+
+.suffix {
+  position: absolute;
+  padding-right: 9px;
+  color: get-theme-variable(text-color-dark);
+}

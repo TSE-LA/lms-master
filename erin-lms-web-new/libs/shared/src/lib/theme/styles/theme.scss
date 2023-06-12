@@ -1,0 +1,238 @@
+/*!
+ * Copyright (C) ERIN SYSTEMS LLC, 2021. All rights reserved.
+ *
+ * The source code is protected by copyright laws and international copyright treaties, as well as
+ * other intellectual property laws and treaties.
+ */
+@use './layout/breakpoints' as breakpoints;
+@import './utility.scss';
+/*--------------------Mapping Section Start Here-------------------*/
+
+//This map contain only colors, no component should use color directly
+//Color name should not named after real color names.
+// These variables can be overridden in the future. Then variables will be miss leading.
+$jrs-color-palate: (
+  //colors
+  titanium-white: #FFFFFF,
+  aqua-green : #1ABC9C,
+  warn-red : #FF6565,
+  pale-blue : #3B86FF,
+  light-blue: #55D8FE,
+  light-purple: #A4A1FB,
+  dark-gray: #4D4F5C,
+  purple-gray : #43425D,
+  hot-pink : #F50956,
+  gray-white: #E9E9F0,
+  white-silver : #D3D6E0,
+  pale-gray : #989AA0,
+  hot-red : #FF4141,
+  jarvis-green : #00796d,
+  blue-gray : #D7DAE2,
+  light-gray-bay: #c1c4cb,
+  gray-bay: #838296,
+  //dark-blue-gray: #6b6a7d,
+  node-gray: #f5f6fa,
+  node-border-gray: #EAF0F4,
+  glow-white: #eee,
+  border-white: #e3e2e2,
+  checkbox-border: #595959,
+  divider-gray: #eae9e9,
+  progress-shadow: #b1aeae,
+  border-gray: #c7c7cc,
+  line-gray: #F1F1F3,
+  status-gray: #f3f5f9,
+  hover-gray: #e3e3eb,
+  white-blue: #DEEBFF,
+  light-gray: #e1e1e1
+  //sizes
+);
+
+//This is component variable mapping
+// element types: dumb-component, any element except wrapper element (e.g: div, body, span)
+//Variable naming schema: $element-style-type-state e.g: (button-background-color, button-primary-background-color-hover)
+$jrs-component-variable-mapping: (
+  /*Color mappings*/
+  primary: aqua-green,
+  warn: warn-red,
+  secondary: pale-blue,
+  light: blue-gray,
+  transparent: transparent,
+  background-color-primary: titanium-white,
+  background-color-secondary: gray-white,
+  text-color-primary: purple-gray,
+  text-color-secondary: gray-bay,
+  text-color-dark: dark-gray,
+  text-color-light: titanium-white,
+  disabled-color: status-gray,
+  disabled-text-color: titanium-white,
+  disabled-color-dark: light-gray-bay,
+  error-color: warn,
+  border-color-light: titanium-white,
+  button-icon-color: gray-bay,
+  menu-icon-background: gray-bay,
+  light-gray-icon-color: blue-gray,
+  outline-color: blue-gray,
+  navigation-text-color: gray-bay,
+  navigation-item-hover-baclground: gray-white,
+  calendar-today-background: gray-white,
+  navigation-shadow-color: white-silver,
+  app-background-color: gray-white,
+  app-frame-text-color: text-color-primary,
+  card-background-color: background-color-primary,
+  card-text-color: text-color-primary,
+  header-font-weight: 600,
+  header-font-size: 20px,
+  input-background-color: titanium-white,
+  notification-text-color: titanium-white,
+  //dropdown
+  dropdown-text-color : dark-gray,
+  dropdown-background-color-hover: white-silver,
+  dropdown-box-shadow-color: blue-gray,
+  //button
+  button-dark-background-color: color-3,
+  button-light-background-color: warn-red,
+  button-outline-light-border-color: aqua-green,
+  button-outline-light-icon-color: warn-red,
+  button-background-dark-gray: dark-gray,
+  //card
+  more-icon-color: gray-bay,
+  card-color: gray-bay,
+  background-glow-color: gray-white,
+  // divider
+  divider-color: divider-gray,
+  //calendar
+  calendar-node-font-size: 12px,
+  calendar-node-text-color: dark-gray,
+  calendar-event-text-color: titanium-white,
+  calendar-event-font-size: 12px,
+  calendar-background-color: titanium-white,
+  calendar-box-shadow: blue-gray,
+  calendar-border-color: gray-white,
+  calendar-header-background: gray-white,
+  calendar-preview-text-color: dark-gray,
+  calendar-node-hover-background: node-gray,
+  calendar-today-node-border-color: node-border-gray,
+  calendar-preview-background-color:titanium-white,
+  //surface section
+  surface-background-color: titanium-white,
+  surface-border-color: color-15,
+  input-text-color: gray-bay,
+  text-color: purple-gray,
+  description-text-color: dark-blue-gray,
+  //layout section
+  sidenav-width: 240px,
+  login-background-color: aqua-green,
+  /*Pixel sizes*/
+  button-border-radius: 5px,
+  medium-border-width: 2px solid,
+  input-border-radius: 1px,
+  //scrollbar
+  scrollbar-small-width: 2px,
+  scrollbar-medium-width: 5px,
+  scrollbar-large-width: 8px,
+  scrollbar-border-color: gray-white,
+  scrollbar-track-background-color: titanium-white,
+  scrollbar-thumb-primary-background-color: primary,
+  scrollbar-thumb-secondary-background-color: gray-white,
+  scrollbar-thumb-background-color-hover: jarvis-green,
+  //Snackbar
+  snackbar-background-color : titanium-white,
+  //border-radius
+  border-radius-5: 5px,
+  border-radius-10: 10px,
+  border-radius-15: 15px,
+  border-radius-20: 20px,
+  border-radius-25: 25px,
+  border-shadow: pale-gray,
+  border-color: border-white,
+  tab-border-color: border-gray,
+  //font-sizes
+  font-size-9: 9px,
+  font-size-10: 10px,
+  font-size-13 : 13px,
+  font-size-17: 17px,
+  //header toolbar
+  header-text-color: purple-gray,
+  app-frame-header-background-color: titanium-white,
+  app-header-height: 60px,
+  role-color: gray-bay,
+  username-color: purple-gray,
+  checkbox-color: primary,
+  checkbox-light-color : titanium-white,
+  checkbox-border-color: checkbox-border,
+  //grade section
+  grade-background-color: gray-white,
+  grade-border-color: gray-white,
+  grade-text-color: dark-gray,
+  //promotion-table
+  promotion-table-new-row-background: white-silver,
+  promotion-table-active-row-background: hover-gray,
+  //course content structure
+  content-module-background: node-gray,
+  //table
+  table-header-font-size: 12px,
+  table-line: line-gray,
+  table-progress-background: gray-white,
+  table-row-hover-color: hover-gray,
+  table-progress-text: titanium-white,
+  table-row-highlight-color: white-silver,
+  table-text-color: purple-gray,
+  //dashlet
+  dashlet-background-color: titanium-white,
+  dashlet-status-text-color: status-gray,
+  dashlet-course-count-text-color: gray-bay,
+  dashlet-box-shadow: blue-gray,
+  learner-success-own: light-purple,
+  learner-success-others: light-blue,
+  //progress
+  progress-chapters-background: gray-white,
+  chapters-disabled-text-color: pale-gray,
+  iframe-button: light-gray,
+  //exam
+  question-chosen-background: node-gray,
+  //loader
+  loader-track: white-silver,
+  button-focus-background: white-silver,
+  //info panel color
+  info-panel-background-color: white-blue,
+  //course content structure
+  progress-bar-background-color: linear-gradient(to right, #1dccaa 0%, #1ABC9C 20%, #1ABC9C 40%, #1ddbb6 100%),
+  progress-text-shadow-color: progress-shadow
+);
+
+/*--------------------Theme Setting Section Start Here-------------------*/
+
+
+//Default theme
+$jrs-default-theme: map-merge($jrs-color-palate, $jrs-component-variable-mapping);
+$jrs-default-theme: map-merge($jrs-default-theme, breakpoints.$jrs-break-points);
+
+/*--------------------Function and Mixing Section Start Here-------------------*/
+//TODO: add validation to new theme map
+@mixin create_theme($new-theme-map, $name) {
+  $theme: map-merge($jrs-default-theme, $new-theme-map);
+  //create theme css and created define theme variables.
+  .jrs-theme-#{$name} {
+    @each $key, $value in $theme {
+      @if (type-of($value) == string) {
+        --#{$key}: var(--#{$value});
+      } @else {
+        --#{$key}: #{$value};
+      }
+    }
+  }
+  @content;
+}
+
+/*
+  This variable create to prevent, undefined variable used in components
+*/
+@function get-theme-variable ($key) {
+  @if map-has-key($jrs-component-variable-mapping, $key) {
+    //formatting to css variable
+    @return var(--#{$key});
+  } @else {
+    @error #{$key}+"variable doesn't exist in variable map"
+  }
+}
+

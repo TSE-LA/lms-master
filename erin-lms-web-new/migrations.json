@@ -1,0 +1,67 @@
+{
+  "migrations": [
+    {
+      "version": "12.5.0-beta.1",
+      "description": "Rename the workspace-schematic script into workspace-generator script",
+      "factory": "./src/migrations/update-12-5-0/add-target-dependencies",
+      "cli": "nx",
+      "package": "@nrwl/workspace",
+      "name": "add-target-dependencies"
+    },
+    {
+      "cli": "nx",
+      "version": "12.4.0-beta.0",
+      "description": "Remove ESLint parserOptions.project config if no rules requiring type-checking are in use",
+      "factory": "./src/migrations/update-12-4-0/remove-eslint-project-config-if-no-type-checking-rules",
+      "package": "@nrwl/linter",
+      "name": "remove-eslint-project-config-if-no-type-checking-rules"
+    },
+    {
+      "version": "11.5.3-beta.1",
+      "description": "Update react storybook lint config",
+      "factory": "./src/migrations/update-11-5-3/update-lint-ignores",
+      "package": "@nrwl/storybook",
+      "name": "update-11-5-3"
+    },
+    {
+      "version": "11.6.4",
+      "cli": "nx",
+      "description": "Update storybook if installed and above 6 but below 6.2.9",
+      "factory": "./src/migrations/update-11-6-0/update-storybook",
+      "package": "@nrwl/storybook",
+      "name": "update-11-6-0"
+    },
+    {
+      "version": "12.1.0-beta.7",
+      "cli": "nx",
+      "description": "Update react storybook tsconfig to avoid VSCode errors",
+      "factory": "./src/migrations/update-12-1-0/fix-storybook-tsconfig",
+      "package": "@nrwl/storybook",
+      "name": "update-12-1-0"
+    },
+    {
+      "version": "12.3.0-rc.1",
+      "cli": "nx",
+      "description": "Update storybook if installed and above 6 but below 6.2.9",
+      "factory": "./src/migrations/update-11-6-0/update-storybook",
+      "package": "@nrwl/storybook",
+      "name": "update-12-3-0"
+    },
+    {
+      "version": "12.5.0-beta.5",
+      "cli": "nx",
+      "description": "Upgrade Storybook to v6.3",
+      "factory": "./src/migrations/update-12-5-0/migrate-storybook-6-3",
+      "package": "@nrwl/storybook",
+      "name": "update-12-5-0"
+    },
+    {
+      "version": "12.5.0-beta.5",
+      "cli": "nx",
+      "description": "Install the @storybook/addon-essentials package",
+      "factory": "./src/migrations/update-12-5-0/install-addon-essentials",
+      "package": "@nrwl/storybook",
+      "name": "install-addon-essentials"
+    }
+  ]
+}

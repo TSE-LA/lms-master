@@ -1,0 +1,117 @@
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+$primary: (
+  50 : #e4f7f3,
+  100 : #baebe1,
+  200 : #8ddece,
+  300 : #5fd0ba,
+  400 : #3cc6ab,
+  500 : #1abc9c,
+  600 : #17b694,
+  700 : #13ad8a,
+  800 : #0fa580,
+  900 : #08976e,
+  A100 : #c3ffec,
+  A200 : #90ffdc,
+  A400 : #5dffcc,
+  A700 : #44ffc4,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #000000,
+    500 : #000000,
+    600 : #000000,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #000000,
+    A700 : #000000,
+  )
+);
+
+$secondary: (
+  50 : #e7f0ff,
+  100 : #c4dbff,
+  200 : #9dc3ff,
+  300 : #76aaff,
+  400 : #5898ff,
+  500 : #3b86ff,
+  600 : #357eff,
+  700 : #2d73ff,
+  800 : #2669ff,
+  900 : #1956ff,
+  A100 : #ffffff,
+  A200 : #fdfeff,
+  A400 : #cad7ff,
+  A700 : #b1c3ff,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #000000,
+    500 : #ffffff,
+    600 : #ffffff,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #000000,
+    A700 : #000000,
+  )
+);
+
+$warn-palette: (
+  50 : #ffeded,
+  100 : #ffd1d1,
+  200 : #ffb2b2,
+  300 : #ff9393,
+  400 : #ff7c7c,
+  500 : #ff6565,
+  600 : #ff5d5d,
+  700 : #ff5353,
+  800 : #ff4949,
+  900 : #ff3737,
+  A100 : #ffffff,
+  A200 : #ffffff,
+  A400 : #ffe1e1,
+  A700 : #ffc8c8,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #000000,
+    500 : #000000,
+    600 : #000000,
+    700 : #000000,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #000000,
+    A700 : #000000,
+  )
+);
+
+
+$lms-primary: mat.define-palette($primary, 500);
+$lms-accent: mat.define-palette($secondary, 500);
+$lms-warn: mat.define-palette($warn-palette, 500);
+
+$lms-material-theme:  mat.define-light-theme((
+  color: (
+    primary: $lms-primary,
+    accent: $lms-accent,
+    warn: $lms-warn,
+  )
+));
+@include mat.all-component-themes($lms-material-theme);
+

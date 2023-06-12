@@ -1,0 +1,109 @@
+@use "libs/shared/src/lib/theme/styles/theme" as *;
+
+.progress-content {
+  background-color: get-theme-variable(background-color-primary);
+  list-style: none;
+  padding: 10px;
+  margin: 0;
+  color: get-theme-variable(input-text-color);
+  position: relative;
+  left: 0;
+  right: 0;
+  top: 100%;
+  z-index: 15;
+  overflow: hidden;
+}
+
+.dropdown-values {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  display: block;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 5px 20px;
+  box-sizing: border-box;
+}
+
+li {
+  text-overflow: ellipsis;
+}
+
+.chapter-dropdown {
+  position: relative;
+}
+
+.chapters-section {
+  width: 100%;
+}
+
+.chapters {
+  cursor: pointer;
+  padding: 15px 8px 15px 5px;
+  width: 100%;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid get-theme-variable(outline-color);
+  background-color: get-theme-variable(progress-chapters-background);
+}
+
+.padding {
+  padding: 4px 8px 9px 6px;
+
+  .text-style {
+    margin: 6px 0 0 10px;
+  }
+
+  .icon-padding {
+    margin-top: 9px;
+  }
+}
+
+.chapters-title {
+  text-align: left;
+  padding-top: 6px;
+  line-height: 1.5;
+  display: flex;
+  margin-left: 10px;
+}
+
+.chapters-container input {
+  display: none;
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+
+.open {
+  transform: rotate(-180deg);
+  transition: transform ease 0.3s;
+}
+
+#progress {
+  font-weight: normal;
+  padding: 7px 0 7px 4px;
+  font-size: 13px;
+}
+
+.disabled {
+  color: get-theme-variable(chapters-disabled-text-color) !important;
+  cursor: not-allowed;
+}
+
+.clicked {
+  background-color: get-theme-variable(button-focus-background);
+}
+
+.file-title {
+  margin: 8px 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  display: block;
+  cursor: pointer;
+  font-size: 13px;
+  box-sizing: border-box;
+  color: get-theme-variable(text-color-primary);
+  text-decoration: underline;
+}
+

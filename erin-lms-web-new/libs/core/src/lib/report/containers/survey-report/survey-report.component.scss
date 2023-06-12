@@ -1,0 +1,45 @@
+@use "../../../../../../shared/src/lib/theme/styles/theme" as *;
+
+.container {
+  height: 70vh;
+  overflow: auto;
+  padding: 15px 15px 40px;
+  margin-bottom: 16px;
+  color: get-theme-variable(text-color-primary);
+}
+
+.header, .question {
+  width: 75vw;
+  background-color: get-theme-variable(background-color-primary);
+}
+
+.header {
+  padding-right: 15px;
+  padding-top: 15px;
+}
+
+.total-responses {
+  margin: 16px 16px 16px 30px;
+}
+
+.question {
+  padding: 15px 0 15px 15px;
+  margin-bottom: 30px;
+}
+
+::-webkit-scrollbar {
+  width: get-theme-variable(scrollbar-medium-width);
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: get-theme-variable(border-radius-5);
+  background: get-theme-variable(scrollbar-thumb-primary-background-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: get-theme-variable(scrollbar-thumb-background-color-hover);
+}

@@ -1,0 +1,14 @@
+/*
+ * (C)opyright, 2019, ERIN SYSTEMS LLC
+ * The source code is protected by copyright laws and international copyright
+ * treaties, as well as other intellectual property laws and treaties.
+ * All rights reserved.
+ */
+
+dependencies {
+  compile project(':erin-aim-domain')
+  compile "mn.erin.common:erin-common-rest:1.0.0"
+
+  compile lib.javax.inject
+  compile lib.swagger.annotations
+}

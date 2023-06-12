@@ -1,0 +1,23 @@
+# IDE
+.idea
+
+# git
+.git
+.github
+
+# cicd
+cicd
+
+# java 
+gradle
+.gradle
+
+# build folders
+**/*/build
+**/*/dist
+
+# node_modules
+**/*/node_modules
+
+# angular
+**/*/.angular

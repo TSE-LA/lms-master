@@ -1,0 +1,109 @@
+/*!
+ * Copyright (C) ERIN SYSTEMS LLC, 2021. All rights reserved.
+ *
+ * The source code is protected by copyright laws and international copyright treaties, as well as
+ * other intellectual property laws and treaties.
+ */
+
+/*
+BREAK POINTS
+value          |0px   414px   600px   800px   1024px  1280px
+key            |xs    s       sm      md      lg      xl
+screen width   |------|-------|-------|-------|-------|------->
+range          |  xs  |   s   |  sm   |   md  |   lg  |   xl
+*/
+$jrs-break-points: (
+  media_xs: 0, //mobile
+  media_s: 414px, //mobile
+  media_sm: 600px, //tablet, mobile
+  media_md: 800px, //laptop, tablet
+  media_lg: 1024px, //large desktop
+  media_xl: 1280px, // high res desktop, monitor, tv
+  media_xxl: 1480px,
+);
+
+/*-------------------Media breakpoint Function and MIXIN-------------------------*/
+
+// Returns a blank string if smallest breakpoint, otherwise returns the name with a dash in front.
+// Useful for making responsive utilities.
+//
+//    >> breakpoint-infix(xs, (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px))
+//    ""  (Returns a blank string)
+//    >> breakpoint-infix(sm, (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px))
+//    "-sm"
+@function breakpoint-infix($name, $breakpoints: $jrs-break-points) {
+  @return if(breakpoint-min($name, $breakpoints) == null, "", "-#{$name}");
+}
+
+// Minimum breakpoint width. Null for the smallest (first) breakpoint.
+//
+//    >> breakpoint-min(sm, (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px))
+//    576px
+@function breakpoint-min($name, $breakpoints: $jrs-break-points) {
+  $min: map-get($breakpoints, $name);
+  @return if($min != 0, $min, null);
+}
+
+// Maximum breakpoint width.
+// The maximum value is reduced by 0.02px to work around the limitations of
+// `min-` and `max-` prefixes and viewports with fractional widths.
+// See https://www.w3.org/TR/mediaqueries-4/#mq-min-max
+// Uses 0.02px rather than 0.01px to work around a current rounding bug in Safari.
+// See https://bugs.webkit.org/show_bug.cgi?id=178261
+//
+//    >> breakpoint-max(md, (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px))
+//    767.98px
+@function breakpoint-max($name, $breakpoints: $jrs-break-points) {
+  $max: map-get($breakpoints, $name);
+  @return if($max and $max > 0, $max - .02, null);
+}
+
+// Media of at most the maximum breakpoint width. No query for the largest breakpoint.
+// Makes the @content apply to the given breakpoint and narrower.
+// e.g: media-breakpoint-between(media_md, custom-breakpoints);
+@mixin media-breakpoint-down($name, $breakpoints: $jrs-break-points) {
+  $max: breakpoint-max($name, $breakpoints);
+  @if $max {
+    @media (max-width: $max) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+
+// Media of at least the minimum breakpoint width. No query for the smallest breakpoint.
+// Makes the @content apply to the given breakpoint and wider.
+// e.g: media-breakpoint-between(media_md, custom-breakpoints);
+@mixin media-breakpoint-up($name, $breakpoints: $jrs-break-points) {
+  $min: breakpoint-min($name, $breakpoints);
+  @if $min {
+    @media (min-width: $min) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+
+// Media that spans multiple breakpoint widths.
+// Makes the @content apply between the min and max breakpoints.
+// e.g: media-breakpoint-between(media_md, media_lg, custom_breakpoints);
+@mixin media-breakpoint-between($lower, $upper, $breakpoints: $jrs-break-points) {
+  $min: breakpoint-min($lower, $breakpoints);
+  $max: breakpoint-max($upper, $breakpoints);
+
+  @if $min != null and $max != null {
+    @media (min-width: $min) and (max-width: $max) {
+      @content;
+    }
+  } @else if $max == null {
+    @include media-breakpoint-up($lower, $breakpoints) {
+      @content;
+    }
+  } @else if $min == null {
+    @include media-breakpoint-down($upper, $breakpoints) {
+      @content;
+    }
+  }
+}

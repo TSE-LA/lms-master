@@ -1,0 +1,116 @@
+@use "../../theme/styles/theme" as *;
+@use "../../theme/styles/layout/breakpoints" as *;
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 35px;
+  color: get-theme-variable(text-color-primary);
+  @include media-breakpoint-down(media_md) {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+.column {
+  display: grid;
+  grid-template-rows: 1fr 9fr;
+  grid-row-gap: 15px;
+}
+
+.info {
+  margin-left: 30px;
+  font-weight: bold;
+}
+
+.exam-detail {
+  display: grid;
+  grid-column-gap: 5px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.key {
+  display: inline-flex;
+}
+
+.completed-key {
+  display: grid;
+  grid-template-columns: 2fr 8fr;
+}
+
+.keys, .values {
+  display: grid;
+  grid-template-rows: repeat(5, 1fr);
+  grid-row-gap: 5px;
+  align-items: center;
+}
+
+.keys {
+  margin-left: 30px;
+}
+
+.values {
+  text-align: right;
+  @include media-breakpoint-down(media_md) {
+    padding-right: 35px;
+  }
+}
+
+.completed-values {
+  text-align: right;
+  padding-right: 35px;
+}
+
+.completed-keys {
+  @include media-breakpoint-down(media_md) {
+    margin-left: 30px;
+  }
+}
+
+.completed-keys, .completed-values {
+  display: grid;
+  grid-template-rows: repeat(5, 1fr);
+  grid-row-gap: 5px;
+  align-items: center;
+}
+
+.completed-exam-detail {
+  display: grid;
+  transition: filter 2s ease-out;
+  grid-column-gap: 5px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.value {
+  text-align: right;
+}
+
+.completed-info {
+  display: inline-flex;
+  align-items: center;
+  font-weight: bold;
+
+  jrs-icon {
+    margin-left: 15px;
+  }
+
+  @include media-breakpoint-down(media_md) {
+    margin-left: 30px;
+    margin-top: 25px;
+  }
+}
+
+.blur {
+  filter: blur(7px) grayscale(100%);
+}
+
+.show {
+  .blur {
+    filter: blur(0) grayscale(0);
+  }
+}
+
+.certificate {
+  cursor: pointer;
+  color: get-theme-variable(secondary);
+}

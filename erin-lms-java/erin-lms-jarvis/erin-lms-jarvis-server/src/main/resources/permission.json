@@ -1,0 +1,1350 @@
+[
+  {
+    "LMS_ADMIN": [
+      {
+        "id": "app.navigation.classroomCourse",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "app.navigation.assessment",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "app.navigation.certificate",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "app.navigation.online-course-activity",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "app.navigation.group-management",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "app.navigation.exam",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "app.navigation.examinee-list",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "app.navigation.exam-statistics",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "app.navigation.exam-list",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "app.navigation.question-list",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "app.navigation.user-management",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "app.navigation.profile",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "app.navigation.filter",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "app.navigation.action.promotion",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "app.navigation.dashboard",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "app.navigation.promotion",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "app.navigation.advise",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "app.navigation.classroomTraining",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "app.navigation.onlineCourse",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "app.navigation.report",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "app.navigation.settings",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "app.navigation.system-settings",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "app.navigation.help",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "app.navigation.switch",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.dashboard.dashlet.filtered.onlineCourse",
+        "groupId": "LMS_SUPERVISOR",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.dashboard.dashlet.filtered.createdAdvise",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.dashboard.dashlet.filtered.createdPromotion",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.dashboard.dashlet.filtered.classroomTraining",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.dashboard.dashlet.non-filtered.userActivity",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.dashboard.dashlet.non-filtered.classroomSchedule",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.dashboard.dashlet.adminFilter",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.promotion.publishFilter",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.promotion.addButton",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.promotion.enrollmentToReadershipBtnId",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.onlineCourse.editButton",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.promotion.edit",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.promotion.statistic",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.promotion.delete",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.promotion.clone",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.promotion.addEnrollment",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.promotion.learn",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.promotion.read",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.promotion.update",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.promotion.hide",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.promotion.clone",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.onlineCourse.addButton",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.onlineCourse.typeFilter",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.onlineCourse.contextMenu",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.onlineCourse.publishStatusFilter",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.onlineCourse.analytic",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.group.delete",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.group.add",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.group.edit",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.userManagement.add",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.userManagement.import",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.userManagement.export",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.membership.delete",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.assessment.edit",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.assessment.update",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.assessment.delete",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.onlineCourse.editButton",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.onlineCourse.edit",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.onlineCourse.publish",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.onlineCourse.enrollment",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.onlineCourse.delete",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.onlineCourse.hide",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.onlineCourse.launch",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.report.assessment",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.classroomCourse.addButton",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.classroomCourse.typeFilter",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.classroomCourse.stateFilter",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.classroomCourse.contextMenu",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.classroomCourse.edit",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.classroomCourse.enrollManagersAndSupervisors",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.classroomCourse.start",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.classroomCourse.watch",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.classroomCourse.confirm",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.classroomCourse.forceConfirm",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.classroomCourse.enrollUsers",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.classroomCourse.delete",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.classroomCourse.view",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.classroomCourse.cancel",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.classroomCourse.postpone",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "app.users.add",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.classroomCourse.reverseState",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.classroomCourse.addAttendance",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.classroomCourse.removeAttendance",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.dashboard.dashlet.onlineCourseCount",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.dashboard.dashlet.onlineCourseActivity",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.system.settings",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "app.navigation.learnerHistory",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.announcement.view",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.announcement.edit",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.announcement.delete",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.announcement.create",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.announcement.statistic",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      }
+    ],
+    "LMS_SUPERVISOR": [
+      {
+        "id": "app.navigation.dashboard",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "app.navigation.promotion",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "app.navigation.advise",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "app.navigation.onlineCourse",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "app.navigation.classroomCourse",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.classroomCourse.typeFilter",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "app.navigation.report",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "app.navigation.help",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "app.navigation.settings",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "app.navigation.group-management",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "app.navigation.profile",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.dashboard.dashlet.filtered.onlineCourse",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.dashboard.dashlet.filtered.promotion",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.dashboard.dashlet.filtered.advise",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.dashboard.dashlet.filtered.userActivity",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.dashboard.dashlet.non-filtered.classRoomTraining",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.promotion.statistic",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.promotion.learn",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.promotion.read",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.group.add",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.group.edit",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.onlineCourse.typeFilter",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.onlineCourse.contextMenu",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.onlineCourse.progress",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.onlineCourse.notification",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.onlineCourse.launch",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.onlineCourse.analytic",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.classroomCourse.enrollUsers",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.classroomCourse.view",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.classroomCourse.gradeTable",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.dashboard.dashlet.onlineCourseCount",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.dashboard.dashlet.onlineCourseActivity",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "app.navigation.exam",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "app.navigation.examinee-list",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.announcement.view",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      }
+    ],
+    "LMS_MANAGER": [
+      {
+        "id": "app.navigation.dashboard",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "app.navigation.promotion",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "app.navigation.advise",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "app.navigation.onlineCourse",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "app.navigation.classroomCourse",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "app.navigation.classroomTraining",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.classroomCourse.typeFilter",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "app.navigation.report",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "app.navigation.help",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "app.navigation.settings",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "app.navigation.group-management",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "app.navigation.profile",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.dashboard.dashlet.filtered.onlineCourse",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.dashboard.dashlet.manager.onlineCourse",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.dashboard.dashlet.filtered.promotion",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.dashboard.dashlet.filtered.advise",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.dashboard.dashlet.filtered.userActivity",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.dashboard.dashlet.non-filtered.classRoomTraining",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.promotion.statistic",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.promotion.learn",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.promotion.read",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.group.add",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.group.edit",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.onlineCourse.typeFilter",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.onlineCourse.contextMenu",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.onlineCourse.progress",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.onlineCourse.notification",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.onlineCourse.launch",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.onlineCourse.analytic",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.classroomCourse.enrollUsers",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.classroomCourse.view",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.classroomCourse.gradeTable",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.dashboard.dashlet.onlineCourseCount",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.dashboard.dashlet.onlineCourseActivity",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "app.navigation.exam",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "app.navigation.examinee-list",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.announcement.view",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      }
+    ],
+    "LMS_USER": [
+      {
+        "id": "app.navigation.dashboard",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.dashboard.employee.dashlet",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "app.navigation.promotion",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "app.navigation.advise",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "app.navigation.onlineCourse",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "app.navigation.classroomCourse",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "app.navigation.classroomTraining",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "app.navigation.help",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "app.navigation.profile",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.dashboard.dashlet.non-filtered.achievement",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.dashboard.dashlet.non-filtered.classRoomTraining",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.dashboard.dashlet.certificate",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.dashboard.dashlet.non-filtered.newPromotion",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.promotion.learn",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.promotion.read",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.onlineCourse.launch",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.onlineCourse.progress",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.onlineCourse.notification",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.classroomCourse.view",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.classroomCourse.gradeTable",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "app.navigation.exam",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "app.navigation.examinee-list",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      },
+      {
+        "id": "user.announcement.view",
+        "properties": {
+          "disable": false,
+          "visible": true
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,16 @@
+/*
+ * (C)opyright, 2021, ERIN SYSTEMS LLC
+ * The source code is protected by copyright laws and international copyright
+ * treaties, as well as other intellectual property laws and treaties.
+ * All rights reserved.
+ */
+apply plugin: 'war'
+
+dependencies {
+  compile project(':erin-aim-domain')
+
+  compile lib.spring.context
+
+  compileOnly lib.javax.annotation_api
+  compileOnly lib.javax.servlet
+}

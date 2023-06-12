@@ -1,0 +1,31 @@
+name: Build Jarvis
+on:
+  workflow_dispatch:
+
+jobs:
+  build-jarvis:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Get branch version
+        env:
+          BRANCH: ${{ github.ref_name }}
+        id: get_branch
+        run: echo "::set-output name=version::${BRANCH##*/lms-v}"
+      - name: Docker login to own registry server.
+        uses: docker/login-action@v1
+        with:
+          registry: registry.erin.systems
+          username: ${{ secrets.REGISTRY_USERNAME }}
+          password: ${{ secrets.REGISTRY_CREDENTIAL }}
+      - name: Build Docker image
+        id: image_tag
+        env:
+          BUILD_TARGET: jarvis
+          IMAGE_TAG: ${{ steps.get_branch.outputs.version }}-staging.${{ github.run_number }}
+          IMAGE_REPOSITORY: registry.erin.systems/erin-lms-jarvis
+        run: |
+          ./cicd/publish-docker-image.sh
+          echo "::set-output name=version::$IMAGE_TAG"
+      - name: "Summary"
+        run: echo "Successfully build for Jarvis with ${{ steps.image_tag.outputs.version }} :rocket:" >> $GITHUB_STEP_SUMMARY

@@ -1,0 +1,17 @@
+cmi.total_time,READ_ONLY,PT0.0S
+cmi.location,READ_WRITE,0
+cmi.progress_measure,READ_WRITE,0
+cmi.score.raw,READ_WRITE,unknown
+cmi.score.max,READ_WRITE,unknown
+cmi.success_status,READ_WRITE,unknown
+cmi.learner_id,READ_ONLY,id
+cmi.learner_name,READ_ONLY,unknown
+cmi.exit,WRITE_ONLY,exit
+cmi.completion_status,READ_WRITE,not attempted
+cmi.completion_threshold,READ_WRITE,unknown
+cmi.session_time,WRITE_ONLY,PT0.0S
+cmi.suspend_data,READ_WRITE,unknown
+cmi.comments_from_learner.1.comment,READ_WRITE,unknown
+cmi.interactions._count,READ_ONLY,0
+erin.date.initial_launch,READ_WRITE,unknown
+erin.date.last_launch,READ_WRITE,unknown

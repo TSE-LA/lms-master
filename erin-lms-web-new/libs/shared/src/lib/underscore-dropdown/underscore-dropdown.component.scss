@@ -1,0 +1,18 @@
+::ng-deep {
+  .year-picker-style {
+    .mat-form-field-infix {
+      border-top: none;
+      width: 70px;
+    }
+  }
+
+  .month-picker-style {
+    .mat-form-field-infix {
+      border-top: none;
+      width: 40px;
+    }
+  }
+  .mat-option {
+    height: 2em !important;
+  }
+}

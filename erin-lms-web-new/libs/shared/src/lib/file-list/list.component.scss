@@ -1,0 +1,42 @@
+@use "../theme/styles/theme" as *;
+
+.item {
+  height: 36px;
+  display: inline-flex;
+  font-size: 15px;
+  width: 100%;
+  align-items: center;
+  margin-bottom: 8px;
+  border: get-theme-variable(input-border-radius) solid get-theme-variable(outline-color);
+  border-radius: 5px;
+  background-color: get-theme-variable(content-module-background);
+  transition: transform ease 0.3s;
+}
+.item-name-area {
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  width: calc(100% - 29px);
+}
+
+.order-number {
+  font-size: 13px;
+  color: get-theme-variable(input-text-color);
+  margin-left: 10px;
+}
+.trash-button{
+  height: 100%;
+  display: inline-flex;
+  align-items: center;
+  background-color: get-theme-variable(warn);
+  border-radius: 0 get-theme-variable(border-radius-5) get-theme-variable(border-radius-5) 0;
+  border: get-theme-variable(input-border-radius) solid get-theme-variable(warn);
+  border-right: none;
+  border-bottom: none;
+  border-top: none;
+  justify-content: center;
+  width: 30px;
+  &:hover{
+    cursor: pointer;
+  }
+}

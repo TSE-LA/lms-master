@@ -1,0 +1,80 @@
+@use "libs/shared/src/lib/theme/styles/theme" as *;
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.time-picker-style {
+  color: get-theme-variable(input-text-color);
+  outline: none;
+  border-radius: get-theme-variable(border-radius-5);
+  border: 1px solid get-theme-variable(outline-color);
+  display: flex;
+  position: relative;
+}
+
+.bottom-padding {
+  padding-bottom: 18px;
+}
+
+.error-style {
+  .time-picker-style {
+    border-color: get-theme-variable(error-color) !important;
+  }
+}
+
+.time-picker-label {
+  padding: 0 5px;
+  font-size: 13px;
+  color: get-theme-variable(input-text-color);
+}
+
+.time-picker-style:focus {
+  border-color: get-theme-variable(primary);
+}
+
+.time-input-style {
+  color: get-theme-variable(input-text-color);
+  background: transparent;
+  outline: none;
+  border: none;
+  //padding-left: 8px;
+  width: 37%;
+}
+
+.time-input-style::placeholder {
+  color: get-theme-variable(input-text-color);
+}
+
+.small {
+  font-size: 12px;
+  padding: 7.5px 10px;
+}
+
+.medium {
+  font-size: 13px;
+  padding: 7.5px 16px;
+}
+
+.long {
+  font-size: 13.3px;
+  padding: 8.5px 10px;
+}
+
+.trigger {
+  cursor: pointer;
+}
+
+.hour {
+  text-align: center;
+}
+
+.loading {
+  .shimmer {
+    min-height: 37.2px;
+    width: 100%;
+    @include shimmer(11s);
+  }
+}

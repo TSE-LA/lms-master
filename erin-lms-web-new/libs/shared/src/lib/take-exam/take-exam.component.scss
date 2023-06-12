@@ -1,0 +1,32 @@
+@use "../theme/styles/theme" as *;
+@use "../theme/styles/layout/breakpoints" as *;
+
+.container {
+  width: 65vw;
+  height: 90vh;
+  display: grid;
+  grid-row-gap: 30px;
+  color: get-theme-variable(text-color-primary);
+  @include media-breakpoint-down(media_md) {
+    width: 90vw;
+  }
+}
+
+.header-wrapper {
+  background-color: get-theme-variable(background-color-primary);
+  padding: 15px 30px;
+  border-radius: 3px;
+  box-shadow: 2px 1px 2px 0 get-theme-variable(calendar-box-shadow);
+}
+
+.header {
+  font-weight: 600;
+  font-size: 19px;
+}
+
+.finish-exam {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  place-items: center;
+}

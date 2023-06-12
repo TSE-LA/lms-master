@@ -1,0 +1,29 @@
+@use "../theme/styles/theme" as *;
+
+.header-container {
+  align-items: center;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px 7px;
+  background-color: get-theme-variable(background-color-secondary);
+  border-radius: get-theme-variable(border-radius-5);
+}
+
+.filters {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 10px;
+  align-items: center;
+}
+
+.title {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: get-theme-variable(header-text-color);
+}
+
+.subtitle {
+  font-size: 14px;
+  color: get-theme-variable(input-text-color);
+}

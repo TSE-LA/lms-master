@@ -1,0 +1,88 @@
+@use "../../../../src/lib/theme/styles/theme" as *;
+@use "libs/shared/src/lib/theme/styles/layout/breakpoints" as *;
+
+.certificate-dashlet-container {
+  width: 14vw;
+  margin-left: 10px;
+  display: grid;
+  grid-template-rows: 1fr 3fr;
+  grid-row-gap: 5px;
+  padding: 15px;
+  background-color: get-theme-variable(dashlet-background-color);
+  color: get-theme-variable(text-color-primary);
+  height: 120px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  box-shadow: 2px 1px 2px 0 get-theme-variable(calendar-box-shadow);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  @include media-breakpoint-down(media_xl){
+    width: 19vw;
+  }
+  @include media-breakpoint-down(media_lg) {
+    width: 19vw;
+  }
+  @include media-breakpoint-down(media_md) {
+    width: 30vw;
+  }
+  @include media-breakpoint-down(media_sm) {
+    width: 40vw;
+  }
+  @include media-breakpoint-down(media_s){
+    width: 56vw;
+  }
+}
+.certificates{
+  display: flex;
+  overflow: auto;
+  align-items: center;
+}
+.certificate-dashlet-header {
+  width: 100%;
+  display: inline-flex;
+  word-break: break-word;
+}
+
+.certificate-type {
+  padding-top: 3px;
+  font-size: 15px;
+}
+
+.certificate-name {
+  width: 100%;
+}
+
+.certificate-badge {
+  display: grid;
+  place-items: center;
+}
+
+.certificate-name-text {
+  font-weight: 600;
+  font-size: 18px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* number of lines to show */
+  -webkit-box-orient: vertical;
+}
+
+.loading {
+  .header, .info {
+    font-size: 0;
+    @include shimmer(11s);
+  }
+
+  .certificate-name-text {
+    font-size: 0;
+  }
+}
+
+.certificate-date{
+  font-size: 12px;
+  color: get-theme-variable(chapters-disabled-text-color);
+}
+
+

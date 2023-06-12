@@ -1,0 +1,102 @@
+$jrs-dark-theme: (
+  color-11 : #131313,
+  color-12: #474747,
+  color-13: rgb(255 255 255 / 92%),
+  color-14 :#2a2929,
+  color-17: #474747,
+  color-18: #46474a,
+  color-19: #2d2d2d,
+  color-20: #202020,
+  color-21: #181818,
+  box-shadow: #202020,
+  warn-red : #FF6565,
+  background-color: #3e3e3e,
+  titanium-white: #FFFFFF,
+  dark-white: #AAAAAA,
+  border: #4e4e51,
+  dark-gray: #4D4F5C,
+  divider-gray: #eae9e9,
+  aqua-green : #1ABC9C,
+  gray-bay: #838296,
+  white-blue: #DEEBFF,
+  primary: aqua-green,
+  warn: warn-red,
+  secondary: titanium-white,
+  light: color-17,
+  text-color-primary: titanium-white,
+  text-colo-primary: color-17,
+  dropdown-box-shadow-color: color-18,
+  dropdown-text-color: titanium-white,
+  navigation-shadow-color:box-shadow,
+  divider-color: divider-gray,
+  app-frame-background-color: color-12,
+  app-frame-text-color: color-9,
+  app-frame-header-background-color: color-20,
+  background-color-primary: color-20,
+  background-color-secondary: background-color,
+  background-glow-color: color-19,
+  outline-color: border,
+  input-background-color: color-19,
+  dropdown-background-color-hover: dark-gray,
+  progress-chapters-background: dark-gray,
+  input-text-color: titanium-white,
+  text-color: titanium-white,
+  text-color-dark: titanium-white,
+  disabled-color-dark: gray-bay,
+  button-focus-background: gray-bay,
+  // calendar
+  calendar-background-color: color-19,
+  calendar-event-text-color: titanium-white,
+  calendar-node-text-color: titanium-white,
+  calendar-header-background: color-20,
+  calendar-box-shadow: box-shadow,
+  calendar-border-color: border,
+  calendar-node-hover-background: background-color,
+  calendar-preview-text-color: titanium-white,
+  calendar-preview-background-color: color-20,
+  //sidebar
+  navigation-item-hover-baclground: color-18,
+  navigation-text-color: titanium-white,
+  //header toolbar
+  header-text-color: titanium-white,
+  checkbox-color: dark-gray,
+  //grade section
+  grade-background-color: border,
+  grade-border-color: border,
+  grade-text-color: titanium-white,
+  role-color: titanium-white,
+  username-color: titanium-white,
+  button-icon-color: titanium-white,
+  menu-icon-background: gray-bay,
+  text-color-light: titanium-white,
+  //promo-table
+  promotion-table-new-row-background: white-silver,
+  promotion-table-active-row-background: color-14,
+  //course content structure
+  content-module-background: color-19,
+  //snackbar
+  snackbar-background-color : gray-white,
+  //dashlet
+  dashlet-background-color: color-19,
+  //tab style
+  tab-border-color: dark-white,
+  text-color-secondary: dark-white,
+  table-row-highlight-color: white-silver,
+  table-row-hover-color: color-21,
+  table-text-color: divider-gray,
+  table-progress-background: color-18,
+  //table style
+  table-line: titanium-white,
+  //exam
+  question-chosen-background: dark-gray,
+  //loader
+  loader-track: color-18,
+//info panel color
+  info-panel-background-color: white-blue,
+  dashlet-course-count-text-color: dark-white,
+    //version anchor
+  version-anchor-font-color: color-17,
+  version-anchor-background-color: titanium-white
+);
+
+@include create_theme($jrs-dark-theme, "dark");

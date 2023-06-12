@@ -1,0 +1,25 @@
+@use "../theme/styles/theme" as *;
+
+.paginator {
+  display: flex;
+
+  & > * {
+    display: flex;
+    margin-right: 5px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  & > div > div {
+    margin-right: 5px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+.hide{
+  display: none;
+}

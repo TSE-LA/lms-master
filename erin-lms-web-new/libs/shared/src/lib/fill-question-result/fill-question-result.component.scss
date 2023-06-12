@@ -1,0 +1,12 @@
+@use "../theme/styles/theme" as *;
+
+.answer {
+  display: grid;
+  height: 20px;
+  border: 1px solid get-theme-variable(calendar-border-color);
+  border-radius: 15px;
+  margin-top: 10px;
+  width: 90%;
+  margin-left: 3%;
+  padding: 15px 20px;
+}

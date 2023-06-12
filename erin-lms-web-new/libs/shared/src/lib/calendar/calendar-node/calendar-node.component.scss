@@ -1,0 +1,59 @@
+@use "../../theme/styles/theme" as *;
+@use "../../theme/styles/layout/breakpoints" as *;
+
+.calendar-node {
+  display: grid;
+  grid-template-rows: 15% 85%;
+  font-size: get-theme-variable(calendar-node-font-size);
+  border: 1px solid get-theme-variable(calendar-border-color);
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.2s;
+  max-height: 250px;
+}
+
+.day-number {
+  height: 25px;
+  text-align: right;
+  margin-bottom: 10px;
+  padding-right: 5px;
+  padding-top: 3px;
+
+  @include media-breakpoint-down(media_sm) {
+    height: 10px;
+  }
+}
+
+.events {
+  overflow-x: hidden;
+  overflow-y: auto;
+  max-height: 100%;
+}
+
+.mobile-version {
+  display: grid;
+  grid-template-columns: repeat(5, 20%);
+  @include media-breakpoint-down(media_sm) {
+    grid-template-columns: repeat(4, 25%);
+  }
+  @include media-breakpoint-down(media_s) {
+    grid-template-columns: repeat(3, 33%);
+  }
+}
+
+::-webkit-scrollbar {
+  width: get-theme-variable(scrollbar-small-width);
+}
+
+::-webkit-scrollbar-track {
+  background: get-theme-variable(scrollbar-track-background-color);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: get-theme-variable(border-radius-5);
+  background: get-theme-variable(scrollbar-thumb-primary-background-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: get-theme-variable(scrollbar-thumb-background-color-hover);
+}

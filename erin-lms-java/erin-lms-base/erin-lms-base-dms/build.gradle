@@ -1,0 +1,6 @@
+dependencies {
+  compile project(':erin-lms-base-domain')
+  compile project(':erin-lms-base-scorm')
+  compile 'mn.erin.dms:erin-dms-domain:1.1.0'
+  compile lib.commons.lang
+}

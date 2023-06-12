@@ -1,0 +1,134 @@
+@use '../theme/styles/theme' as *;
+
+.selector {
+  display: grid;
+  grid-template-columns: 80% 20%;
+  align-items: center;
+  background-color: get-theme-variable(background-color-primary);
+  color: get-theme-variable(text-color-primary);
+  border-radius: 5px;
+  width: 120px;
+  border: 1px solid get-theme-variable(outline-color);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  span {
+    padding-left: 15px;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  height: 33px;
+}
+
+.exam-group-style {
+  display: flex;
+
+  .required-star-style {
+    padding-left: 0;
+  }
+}
+
+.selected-group {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 13px;
+  color: get-theme-variable(input-text-color);
+}
+
+.icon {
+  font-size: 15px;
+  transition: transform ease 0.3s;
+}
+
+.left-side {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  margin-right: 10px;
+}
+
+.container {
+  display: grid;
+
+  span {
+    color: get-theme-variable(text-color-primary);
+    margin-left: 5px;
+    font-size: 12px;
+  }
+}
+
+.open {
+  transform: rotate(90deg);
+}
+
+.dropdown-wrapper {
+  position: relative;
+}
+
+.dropdown {
+  background-color: get-theme-variable(background-color-primary);;
+  position: absolute;
+  max-height: 250px;
+  overflow: auto;
+  z-index: 25;
+  border: 1px solid get-theme-variable(outline-color);
+}
+
+.large {
+  width: 100%;
+}
+
+.medium {
+  width: 200px;
+}
+
+.small {
+  width: unset;
+  max-width: 150px;
+}
+
+::-webkit-scrollbar {
+  width: get-theme-variable(scrollbar-medium-width);
+  height: get-theme-variable(scrollbar-medium-width);
+}
+
+::-webkit-scrollbar-track {
+  background: get-theme-variable(scrollbar-track-background-color);
+  opacity: 0.5;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: get-theme-variable(border-radius-5);
+  background: get-theme-variable(scrollbar-thumb-primary-background-color);
+
+}
+
+.label-style {
+  padding: 0 5px;
+  font-size: 12px;
+  color: get-theme-variable(input-text-color);
+}
+
+.required-star-style {
+  color: get-theme-variable(error-color);
+}
+
+.error-style {
+  position: relative;
+  float: right;
+  padding: 0 8px;
+  color: get-theme-variable(error-color);
+  font-size: 12px;
+}
+
+.error-label {
+  border-color: get-theme-variable(error-color);
+  background-color: transparent;
+}
+

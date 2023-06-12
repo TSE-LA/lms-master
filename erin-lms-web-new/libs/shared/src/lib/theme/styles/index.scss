@@ -1,0 +1,24 @@
+/*!
+ * Copyright (C) ERIN SYSTEMS LLC, 2021. All rights reserved.
+ *
+ * The source code is protected by copyright laws and international copyright treaties, as well as
+ * other intellectual property laws and treaties.
+ */
+
+
+@import "theme";
+@import "dark-theme";
+@import "./layout/grid";
+@import "utility";
+@import "font";
+@import "tooltip";
+@import "material-theme";
+
+//initialize default theme here
+@include create_theme($jrs-default-theme, "default"){};
+@include toolTip();
+body{
+  font-family: Roboto, sans-serif;
+  height: 100%;
+  width: 100%;
+}

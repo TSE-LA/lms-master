@@ -1,0 +1,34 @@
+@use "../../../../../shared/src/lib/theme/styles/theme" as *;
+@use "../../../../../shared/src/lib/theme/styles/layout/breakpoints" as *;
+
+.date-items-style {
+  display: flex;
+  padding-top: 13px;
+}
+
+.group-style {
+  margin-top: -5px;
+}
+
+.margin-left {
+  margin-left: 25px;
+}
+
+.margin-right {
+  margin-right: 10px;
+}
+
+.report-header {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  @include media-breakpoint-down(media_xxl) {
+    grid-template-columns: unset;
+    grid-template-rows: repeat(2, auto);
+  }
+}
+
+.dropdowns {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  place-self: end;
+}

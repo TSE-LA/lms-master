@@ -1,0 +1,47 @@
+@use "../../theme/styles/theme" as *;
+@use "../../theme/styles/layout/breakpoints" as *;
+.event-row {
+  display: inline-flex;
+  color: get-theme-variable(calendar-preview-text-color);
+  padding-top: 5px;
+  align-items: center;
+}
+
+.icon {
+  padding-left: 25px;
+}
+
+.text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding-left: 5px;
+  padding-top: 5px;
+}
+
+.content {
+  display: grid;
+  place-items: end;
+}
+
+.loader {
+  margin-left: 30px;
+
+  .shimmer {
+    height: 30px;
+    width: 200px;
+    @include shimmer(11s);
+  }
+
+  .right-loader {
+    margin-left: 25px;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 30% 70%;
+}
+
+
+

@@ -1,0 +1,15 @@
+/*
+ * (C)opyright, 2019, ERIN SYSTEMS LLC
+ * The source code is protected by copyright laws and international copyright
+ * treaties, as well as other intellectual property laws and treaties.
+ * All rights reserved.
+ */
+
+dependencies {
+  compile "mn.erin.domain:erin-domain-base:1.0.0"
+
+  compile "mn.erin.dms:erin-alfresco-connector:1.1.0"
+
+  compile lib.commons.lang
+  compile group: 'org.reflections', name: 'reflections', version: '0.9.12'
+}

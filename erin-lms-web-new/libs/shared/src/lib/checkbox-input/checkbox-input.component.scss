@@ -1,0 +1,288 @@
+@use "libs/shared/src/lib/theme/styles/theme" as *;
+
+.padding {
+  padding-bottom: 16px;
+  padding-right: 10px;
+}
+.medium{
+  width: 20px;
+  height: 20px;
+  &:before{
+    left: 6px;
+    width: 5px;
+    height: 14px;
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+  }
+}
+
+.m-small {
+  width: 18px;
+  height: 18px;
+  &:before{
+    left: 5px;
+    width: 5px;
+    height: 10px;
+    border-style: solid;
+    border-width: 0 3px 3px 0;
+  }
+}
+
+.small{
+  width: 12px;
+  height: 12px;
+  &:before{
+    left: 3.6px;
+    width: 3px;
+    height: 8.4px;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+  }
+}
+.with-text {
+  display: inline-flex;
+  grid-template-columns: 20% 80%;
+
+  label {
+    display: grid;
+    place-items: center;
+    color: get-theme-variable(text-color-dark);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 13px;
+  }
+}
+
+.light {
+  &:checked {
+    background: get-theme-variable(background-color-primary);
+  }
+
+  &::before {
+    border-color: get-theme-variable(checkbox-color);
+    background-color: get-theme-variable(background-color-primary);
+  }
+}
+
+.dark {
+  &:checked {
+    background: get-theme-variable(checkbox-border-color);
+  }
+
+  &::before {
+    border-color: get-theme-variable(checkbox-light-color);
+    background-color: get-theme-variable(checkbox-border-color);
+  }
+}
+
+input[type="checkbox"] {
+  background-color: get-theme-variable(background-color-primary);
+  display: flex;
+  position: relative;
+
+  color: get-theme-variable(text-color-dark);
+  border: 1px solid get-theme-variable(checkbox-border-color);
+  border-radius: 3px;
+  appearance: none;
+  outline: 0;
+  overflow: hidden;
+  cursor: pointer;
+  transition: background 175ms cubic-bezier(0.1, 0.1, 0.25, 1);
+
+  &.classroom-course {
+    margin-right: 10px;
+    background-color: #caffdb;
+    border-color: #2BB18B;
+    &:checked {
+      color:  #2BB18B;
+      border-color: #2BB18B;
+    }
+    &:hover {
+      transition: all 0.5s;
+      box-shadow: 0 0 10px 5px #caffdb;
+    }
+    &:after {
+      box-shadow: 0 0 10px 10px #caffdb;
+    }
+  }
+
+  &.online-course {
+    margin-right: 10px;
+    background-color: #E8F7FD;
+    border-color: #288BDA;
+    &:checked {
+      color:  #288BDA;
+      border-color: #288BDA;
+    }
+    &:hover {
+      transition: all 0.5s;
+      box-shadow: 0 0 10px 5px #E8F7FD;
+    }
+    &:after {
+      box-shadow: 0 0 10px 10px #E8F7FD;
+    }
+  }
+  &.webinar {
+    margin-right: 10px;
+    background-color: #EEEAFF;
+    border-color: #5C24B2;
+    &:checked {
+      color:  #5C24B2;
+      border-color: #5C24B2;
+    }
+    &:hover {
+      transition: all 0.5s;
+      box-shadow: 0 0 10px 5px #EEEAFF;
+    }
+    &:after {
+      box-shadow: 0 0 10px 10px #EEEAFF;
+    }
+  }
+
+  &.PUBLISHED {
+    margin-right: 10px;
+    background-color: #e6f0fc;
+    border-color: #0e72ea;
+    &:checked {
+      color:  #0e72ea;
+      border-color: #0e72ea;
+    }
+    &:hover {
+      transition: all 0.5s;
+      box-shadow: 0 0 10px 5px #e6f0fc;
+    }
+    &:after {
+      box-shadow: 0 0 10px 10px #e6f0fc;
+    }
+  }
+
+  &.STARTED {
+    margin-right: 10px;
+    background-color: #E8F8F5;
+    border-color: #0DC361;
+    &:checked {
+      color:  #0DC361;
+      border-color: #0DC361;
+    }
+    &:hover {
+      transition: all 0.5s;
+      box-shadow: 0 0 10px 5px #E8F8F5;
+    }
+    &:after {
+      box-shadow: 0 0 10px 10px #E8F8F5;
+    }
+  }
+
+  &.POSTPONED {
+    margin-right: 10px;
+    background-color: #FFF4EC;
+    border-color: #FF9342;
+    &:checked {
+      color:  #FF9342;
+      border-color: #FF9342;
+    }
+    &:hover {
+      transition: all 0.5s;
+      box-shadow: 0 0 10px 5px #FFF4EC;
+    }
+    &:after {
+      box-shadow: 0 0 10px 10px #FFF4EC;
+    }
+  }
+
+  &.CANCELED {
+    margin-right: 10px;
+    background-color: #FFEFEF;
+    border-color: #FF6565;
+    &:checked {
+      color:  #FF6565;
+      border-color: #FF6565;
+    }
+    &:hover {
+      transition: all 0.5s;
+      box-shadow: 0 0 10px 5px #FFEFEF;
+    }
+    &:after {
+      box-shadow: 0 0 10px 10px #FFEFEF;
+    }
+  }
+
+  &.DONE {
+    margin-right: 10px;
+    background-color: #F7F7F9;
+    border-color: #ACAEB4;
+    &:checked {
+      color:  #ACAEB4;
+      border-color: #ACAEB4;
+    }
+    &:hover {
+      transition: all 0.5s;
+      box-shadow: 0 0 10px 5px #F7F7F9;
+    }
+    &:after {
+      box-shadow: 0 0 10px 10px #F7F7F9;
+    }
+  }
+
+  &::before {
+    position: absolute;
+    content: '';
+    display: block;
+    transform: rotate(45deg);
+    opacity: 0;
+  }
+
+  &:checked {
+    color: white;
+    border-color: get-theme-variable(checkbox-border-color);
+
+    &::before {
+      opacity: 1;
+    }
+  }
+
+  &:indeterminate::before {
+    left: 50%;
+    top: 50%;
+    width: 10px;
+    height: 2px;
+    border: none;
+    background-color: get-theme-variable(background-color-primary);
+    transform: rotate(0) translate(-50%, -50%);
+  }
+
+  &:indeterminate {
+    background-color: get-theme-variable(checkbox-color);
+    border-color: get-theme-variable(checkbox-color);
+
+    &::before {
+      opacity: 1;
+    }
+  }
+
+  &:disabled::before {
+    border-color: get-theme-variable(disabled-color);
+  }
+}
+
+.disabled {
+  cursor: default;
+
+  input {
+    pointer-events: none;
+    border-color: get-theme-variable(disabled-color);
+  }
+
+  label {
+    color: get-theme-variable(disabled-color);
+  }
+}
+
+.no-outline {
+  border: none !important;
+}
+
+.checkbox-label {
+  margin-left: 10px;
+}

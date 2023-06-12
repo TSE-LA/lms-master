@@ -1,0 +1,6 @@
+{
+  "spec_files": [
+    "./tests/*.spec.ts"
+  ],
+  "stopSpecOnExpectationFailure": true
+}

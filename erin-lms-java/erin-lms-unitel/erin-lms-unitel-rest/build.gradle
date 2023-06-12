@@ -1,0 +1,9 @@
+dependencies {
+  compile project(':erin-lms-unitel-domain')
+  compile project(':erin-lms-base-rest')
+  compile 'mn.erin.dms:erin-alfresco-connector:1.1.0'
+
+  compile lib.shiro.core
+  compile lib.shiro.web
+  compile lib.shiro.spring
+}

@@ -1,0 +1,32 @@
+@use "../theme/styles/theme" as *;
+
+.label-style {
+  padding: 0 5px;
+  color: get-theme-variable(input-text-color);
+}
+
+.label-style-bold {
+  font-weight: bold;
+}
+
+.required-star-style {
+  margin-left: -2px;
+  padding-top: 10px;
+  color: get-theme-variable(error-color);
+}
+
+.error {
+  color: get-theme-variable(warn);
+}
+
+.small {
+  font-size: 14px;
+}
+
+.medium {
+  font-size: 16px;
+}
+
+.large {
+  font-size: 20px;
+}

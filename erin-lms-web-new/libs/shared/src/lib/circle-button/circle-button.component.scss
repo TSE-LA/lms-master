@@ -1,0 +1,65 @@
+@use "../theme/styles/theme" as *;
+
+button {
+  border: none;
+  display: flex;
+  border-radius: 50%;
+  align-items: center;
+  transition: all 0.5s ease;
+  padding-left: 3px;
+  padding-right: 4px;
+
+  &:hover {
+    filter: brightness(70%);
+    cursor: pointer;
+  }
+
+  &:disabled {
+    filter: unset;
+    background-color: get-theme-variable(disabled-color);
+    cursor: not-allowed;
+  }
+}
+
+.primary {
+  background-color: get-theme-variable(primary);
+}
+
+.secondary {
+  background-color: get-theme-variable(secondary);
+}
+
+.warn {
+  background-color: get-theme-variable(warn);
+}
+
+.dark {
+  background-color: get-theme-variable(text-color-dark);
+}
+
+.gray {
+  background-color: get-theme-variable(disabled-color-dark);
+}
+
+.disabled-color {
+  background-color: get-theme-variable(iframe-button);
+}
+
+.none {
+  background-color: transparent;
+}
+
+.small {
+  width: 20px;
+  height: 20px;
+}
+
+.medium {
+  width: 30px;
+  height: 30px;
+}
+
+.large {
+  width: 46px;
+  height: 43px;
+}

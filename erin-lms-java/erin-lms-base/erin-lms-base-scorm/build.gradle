@@ -1,0 +1,5 @@
+dependencies {
+  compile project(':erin-lms-base-domain')
+
+  compile lib.javax.inject
+}

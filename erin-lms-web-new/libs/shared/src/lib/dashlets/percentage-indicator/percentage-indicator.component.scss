@@ -1,0 +1,27 @@
+@use "../../theme/styles/theme" as *;
+@use "../../theme/styles/layout/breakpoints" as *;
+
+.container {
+  margin-top: 15px;
+}
+
+.indicator {
+  display: inline-flex;
+  margin-left: 10px;
+}
+
+.percentage {
+  color: get-theme-variable(text-color-primary);
+}
+
+.primary {
+  color: get-theme-variable(primary);
+}
+
+.warn {
+  color: get-theme-variable(warn);
+}
+
+.icon {
+  margin-top: 2px;
+}

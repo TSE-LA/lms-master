@@ -1,0 +1,94 @@
+@use "../theme/styles/theme" as *;
+
+.primary {
+  color: get-theme-variable(primary);
+}
+
+.secondary {
+  color: get-theme-variable(secondary);
+}
+
+.warn {
+  color: get-theme-variable(warn);
+}
+
+.dark {
+  color: get-theme-variable(text-color-dark);
+}
+
+.gray {
+  color: get-theme-variable(button-icon-color);
+}
+
+.light-gray {
+  color: get-theme-variable(light-gray-icon-color);
+}
+
+.light {
+  color: get-theme-variable(text-color-light);
+}
+
+.purple-gray {
+  color: get-theme-variable(text-color-primary);
+}
+
+.dark-gray {
+  color: get-theme-variable(text-color-dark);
+}
+
+.burn {
+  color: #f55151;
+}
+
+.gold {
+  color: #FFD700;
+}
+
+.silver {
+  color: #C0C0C0;
+}
+
+.transparent {
+  color: transparent;
+}
+
+.small {
+  font-size: 15px;
+  width: 15px;
+}
+
+.medium {
+  font-size: 18px;
+}
+
+.fs-20 {
+  font-size: 20px;
+}
+
+.fs-23 {
+  font-size: 23px;
+}
+
+.medium-large {
+  font-size: 25px;
+}
+
+.large {
+  font-size: 30px;
+}
+
+.extra-large {
+  font-size: 53.5px;
+}
+
+.chapters-medium {
+  font-size: 22px;
+}
+
+div {
+  display: grid;
+}
+
+.icon-text {
+  width: fit-content;
+}

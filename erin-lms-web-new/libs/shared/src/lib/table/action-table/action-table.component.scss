@@ -1,0 +1,51 @@
+@use "libs/shared/src/lib/theme/styles/theme" as *;
+
+.container {
+  height: 100%;
+}
+
+.table {
+  height: calc(100% - 140px);
+  overflow: auto;
+}
+
+.paginator {
+  float: right;
+  margin-top: 16px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  table-layout: fixed
+}
+
+th {
+  background-color: get-theme-variable(calendar-header-background);
+  color: get-theme-variable(text-color-primary);
+  height: 30px;
+  padding: 8px 16px;
+  overflow: hidden;
+  position: sticky;
+}
+
+td {
+  color: get-theme-variable(text-color-primary);
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 40px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+
+.action-column {
+  width: 52px;
+}
+
+td, th {
+  border-bottom: 0.5px solid get-theme-variable(table-line);
+  text-align: left;
+  font-size: 13px;
+}
